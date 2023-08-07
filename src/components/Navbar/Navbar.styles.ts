@@ -1,18 +1,44 @@
 import styled from "styled-components";
 import { device } from "../../devices";
+import { motion } from "framer-motion";
 
 export const NavbarContainer = styled.div`
-  display: block;
+  display: flex;
   height: 50px;
   width: 100%;
   background-color: var(--primary);
+`;
 
-  @media ${device.mobileS} {
-  }
-  @media ${device.mobileM} {
-  }
+export const Nav = styled.ul`
+  display: none;
+
   @media ${device.tablet} {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    flex-grow: 1;
   }
-  @media ${device.laptop} {
+`;
+
+export const NavItem = styled.li`
+  padding: 0 10px;
+  display: inline;
+`;
+
+export const Menu = styled.div`
+  z-index: 100;
+  @media ${device.tablet} {
+    display: none;
   }
+`;
+
+export const MenuNav = styled(motion.ul)`
+  background-color: var(--primary);
+  height: 100vh;
+  z-index: 100;
+`;
+
+export const MenuNavItem = styled.li`
+  padding: 10px 40px;
 `;
