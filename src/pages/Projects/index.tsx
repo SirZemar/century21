@@ -1,12 +1,12 @@
 import React from "react";
 import { ProjectsContainer } from "./Projects.styles";
-import { useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Projects: React.FC = () => {
-  const { projectId } = useParams();
   return (
     <ProjectsContainer>
-      <div>Hello from project number {projectId}</div>
+      <div>Hello from projects</div>
+      <NavLink to={"./1"}>Project 1</NavLink>
     </ProjectsContainer>
   );
 };

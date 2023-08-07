@@ -6,19 +6,24 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Page404 from "./pages/Page404";
 import Projects from "./pages/Projects";
 import Home from "./pages/Home";
+import Project from "./pages/Project";
 
 const router = createBrowserRouter([
   {
     element: <App />,
+    errorElement: <Page404 />,
     children: [
       {
         path: "/",
         element: <Home />,
-        errorElement: <Page404 />,
+      },
+      {
+        path: "projects",
+        element: <Projects />,
       },
       {
         path: "projects/:projectId",
-        element: <Projects />,
+        element: <Project />,
       },
     ],
   },
