@@ -5,16 +5,22 @@ import reportWebVitals from './reportWebVitals';
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Page404 from "./pages/Page404";
 import Projects from "./pages/Projects";
+import Home from "./pages/Home";
 
 const router = createBrowserRouter([
   {
-    path: "/",
     element: <App />,
-    errorElement: <Page404 />,
-  },
-  {
-    path: "projects/:projectId",
-    element: <Projects />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+        errorElement: <Page404 />,
+      },
+      {
+        path: "projects/:projectId",
+        element: <Projects />,
+      },
+    ],
   },
 ]);
 const root = ReactDOM.createRoot(
