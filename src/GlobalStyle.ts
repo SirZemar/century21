@@ -15,8 +15,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, p {
+h1, h2, h3, p, ul, li {
   margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary);
 }
 
 `;
