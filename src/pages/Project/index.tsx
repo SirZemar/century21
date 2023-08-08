@@ -26,7 +26,7 @@ const Project: React.FC = () => {
       >
         <HeroImage />
       </Section>
-      <Section backgroundColor="primary" flexCenter="row">
+      <Section className="background-colot-primary center-row">
         <Wrapper>
           <Overview>
             <header className="overview__header">Vista Geral</header>
@@ -39,7 +39,7 @@ const Project: React.FC = () => {
           </Overview>
         </Wrapper>
       </Section>
-      <Section flexCenter="row">
+      <Section className="center-row">
         <Wrapper>
           <Views>
             <img className="views__image-one" src={Aerial1} />
@@ -52,16 +52,16 @@ const Project: React.FC = () => {
           </Views>
         </Wrapper>
       </Section>
-      <Section backgroundColor="secondary" flexCenter="row">
+      <Section className="background-colot-secondary center-row">
         <Wrapper>
-          <Blueprints flexCenter="column">
+          <Blueprints className="center-column">
             <header>Apartamentos</header>
             <h2>Cada apartamento é especial!</h2>
             <button>Ver plantas</button>
           </Blueprints>
         </Wrapper>
       </Section>
-      <Section>
+      <Section className="center-row e">
         <Wrapper>
           <Slideshow />
         </Wrapper>

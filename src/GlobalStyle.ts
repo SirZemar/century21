@@ -1,14 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 import { device } from "./devices";
 import { CenterColumn, CenterRow } from "./utils.styles";
+import "react-slideshow-image/dist/styles.css";
 
-export enum FlexCenter {
-  ROW = "row",
-  COLUMN = "column",
-}
-export interface FlexLayout {
-  flexCenter?: string;
-}
 export const GlobalStyles = createGlobalStyle`
 :root {
   --primary: #252526;
@@ -25,14 +19,6 @@ export const GlobalStyles = createGlobalStyle`
 
 * {
   box-sizing: border-box;
-
-  &[flexCenter=${FlexCenter.ROW}] {
-    ${CenterRow}
-  }
-
-  &[flexCenter=${FlexCenter.COLUMN}] {
-    ${CenterColumn}
-  }
 
   .center-row {
     ${CenterRow}   

@@ -2,11 +2,7 @@ import styled from "styled-components";
 import { HeroHouse } from "../../images";
 import { heightNoNavbar } from "../../utils.styles";
 import { device } from "../../devices";
-import { FlexLayout } from "../../GlobalStyle";
 
-interface SectionProps extends FlexLayout {
-  backgroundColor?: string;
-}
 export const ProjectContainer = styled.div`
   h2 {
   }
@@ -21,18 +17,18 @@ export const ProjectContainer = styled.div`
   }
 `;
 
-export const Section = styled.section<SectionProps>`
+export const Section = styled.section`
   width: 100vw;
 
-  &[backgroundColor="primary"] {
+  &.background-colot-primary {
     background-color: var(--primary);
   }
 
-  &[backgroundColor="secondary"] {
+  &.background-colot-secondary {
     background-color: var(--secondary);
   }
 
-  &[backgroundColor="light"] {
+  &.background-colot-light {
     background-color: var(--light);
   }
 
@@ -43,7 +39,7 @@ export const Section = styled.section<SectionProps>`
 
 export const Wrapper = styled.div`
   max-width: 800px;
-
+  width: 100%;
   @media ${device.laptopL} {
     max-width: 1000px;
   }
@@ -92,11 +88,11 @@ export const Views = styled.div`
   }
 
   @media ${device.tablet} {
+    padding: 20px;
     display: grid;
     grid-template:
       "a b" 60%
       "c b" 40% / 50% 50%;
-    gap: 20px;
     .views {
       &__image-one,
       &__image-two {
@@ -131,4 +127,4 @@ export const Views = styled.div`
   }
 `;
 
-export const Blueprints = styled.div<FlexLayout>``;
+export const Blueprints = styled.div``;
