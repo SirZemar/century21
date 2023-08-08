@@ -7,6 +7,7 @@ export const NavbarContainer = styled.div`
   height: var(--navbarHeight);
   width: 100%;
   background-color: var(--primary);
+  position: fixed;
 `;
 
 export const Nav = styled.ul`
