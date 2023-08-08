@@ -5,6 +5,7 @@ export const GlobalStyles = createGlobalStyle`
 :root {
   --primary: #252526;
   --secondary: #BEAF87;
+  --navbarHeight: 50px;
 }
 body {
   margin: 0;

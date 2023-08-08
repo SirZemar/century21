@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export const NavbarContainer = styled.div`
   display: flex;
-  height: 50px;
+  height: var(--navbarHeight);
   width: 100%;
   background-color: var(--primary);
 `;
