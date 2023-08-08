@@ -50,6 +50,10 @@ a {
   color: var(--secondary);
 }
 
+img {
+  vertical-align: middle;
+}
+
 section header {
   font-size: 1.3rem;
 }
