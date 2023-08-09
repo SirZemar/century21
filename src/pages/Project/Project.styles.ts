@@ -97,6 +97,7 @@ export const Views = styled.div`
       &__image-one,
       &__image-two {
         max-height: 100%;
+        padding: 20px;
       }
       &__image-one {
         grid-area: a;
