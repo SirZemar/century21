@@ -2,6 +2,8 @@ import { createGlobalStyle } from "styled-components";
 import { device } from "./devices";
 import { CenterColumn, CenterRow } from "./utils.styles";
 import "react-slideshow-image/dist/styles.css";
+import "semantic-ui-css/semantic.min.css";
+
 
 export const GlobalStyles = createGlobalStyle`
 :root {
