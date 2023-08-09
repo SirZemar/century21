@@ -11,6 +11,7 @@ import {
 import { useParams } from "react-router-dom";
 import { Aerial1, Balcony } from "../../images";
 import Slideshow from "../../components/Slideshow";
+import Contact from "../../components/Contact";
 
 const Project: React.FC = () => {
   const { projectId } = useParams();
@@ -61,9 +62,14 @@ const Project: React.FC = () => {
           </Blueprints>
         </Wrapper>
       </Section>
-      <Section className="center-row e">
+      <Section className="center-row">
         <Wrapper>
           <Slideshow />
+        </Wrapper>
+      </Section>
+      <Section className="center-row">
+        <Wrapper>
+          <Contact />
         </Wrapper>
       </Section>
     </ProjectContainer>
