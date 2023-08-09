@@ -8,6 +8,7 @@ export const NavbarContainer = styled.div`
   width: 100%;
   background-color: var(--primary);
   position: fixed;
+  z-index: 1000;
 `;
 
 export const Nav = styled.ul`
