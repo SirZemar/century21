@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useLayoutEffect, useState, useEffect } from "react";
 import { SlideshowContainer } from "./Slideshow.styles";
 import { Slide } from "react-slideshow-image";
+import { sizes as deviceWidth } from "../../devices";
 
 const Slideshow: React.FC = () => {
-  const [slideSpeed, setSlideSpeed] = useState(1000);
+  const [screenWidth, setScreenWidth] = useState(0);
+  const [slideSpeed, setSlideSpeed] = useState(0);
   const images = [
     "https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
     "https://images.unsplash.com/photo-1506710507565-203b9f24669b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1536&q=80",
@@ -16,7 +18,7 @@ const Slideshow: React.FC = () => {
     border: "0px",
   };
 
-  const properties = {
+  const arrowProperties = {
     prevArrow: (
       <button style={{ ...buttonStyle }}>
         <svg
@@ -41,22 +43,36 @@ const Slideshow: React.FC = () => {
     ),
   };
 
-  console.log(slideSpeed);
+  const handleWindowResize = () => {
+    const width = window.innerWidth;
+    setScreenWidth(width);
+  };
+
+  useEffect(() => {
+    handleWindowResize();
+    screenWidth > deviceWidth.laptop ? setSlideSpeed(1000) : setSlideSpeed(100);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => handleWindowResize());
+    return window.removeEventListener("resize", () => handleWindowResize());
+  }, [screenWidth]);
 
   return (
     <SlideshowContainer
       onMouseLeave={() => {
-        setSlideSpeed(1000);
+        if (screenWidth > deviceWidth.laptop) setSlideSpeed(1000);
       }}
       onMouseEnter={() => {
-        setSlideSpeed(100);
+        if (screenWidth > deviceWidth.laptop) setSlideSpeed(200);
       }}
     >
       <Slide
         transitionDuration={slideSpeed}
         indicators={true}
         cssClass="slideshow"
-        {...properties}
+        {...arrowProperties}
+        autoplay={screenWidth > deviceWidth.laptop ? true : false}
       >
         <div>
           <div
