@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { device } from "../../devices";
 
-export const ContactContainer = styled.div`
+export const ContactFormContainer = styled.div`
   display: flex;
   justify-content: center;
   padding: 20px;
@@ -12,6 +12,12 @@ export const ContactContainer = styled.div`
 
     @media ${device.tablet} {
       max-width: 100%;
+    }
+
+    .error-message {
+      p {
+        padding: 0;
+      }
     }
   }
 `;

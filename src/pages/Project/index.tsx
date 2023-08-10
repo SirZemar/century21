@@ -11,7 +11,8 @@ import {
 import { useParams } from "react-router-dom";
 import { Aerial1, Balcony } from "../../images";
 import Slideshow from "../../components/Slideshow";
-import Contact from "../../components/Contact";
+import ContactForm from "../../components/ContactForm";
+import Footer from "../../components/Footer";
 
 const Project: React.FC = () => {
   const { projectId } = useParams();
@@ -27,7 +28,7 @@ const Project: React.FC = () => {
       >
         <HeroImage />
       </Section>
-      <Section className="background-colot-primary center-row">
+      <Section className="background-color-primary center-row">
         <Wrapper>
           <Overview>
             <header className="overview__header">Vista Geral</header>
@@ -53,7 +54,7 @@ const Project: React.FC = () => {
           </Views>
         </Wrapper>
       </Section>
-      <Section className="background-colot-secondary center-row">
+      <Section className="background-color-secondary center-row">
         <Wrapper>
           <Blueprints className="center-column">
             <header>Apartamentos</header>
@@ -67,9 +68,12 @@ const Project: React.FC = () => {
           <Slideshow />
         </Wrapper>
       </Section>
+      <Section>
+        <Footer />
+      </Section>
       <Section className="center-row">
         <Wrapper>
-          <Contact />
+          <ContactForm />
         </Wrapper>
       </Section>
     </ProjectContainer>
