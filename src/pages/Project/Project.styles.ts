@@ -20,15 +20,15 @@ export const ProjectContainer = styled.div`
 export const Section = styled.section`
   width: 100vw;
 
-  &.background-colot-primary {
+  &.background-color-primary {
     background-color: var(--primary);
   }
 
-  &.background-colot-secondary {
+  &.background-color-secondary {
     background-color: var(--secondary);
   }
 
-  &.background-colot-light {
+  &.background-color-light {
     background-color: var(--light);
   }
 

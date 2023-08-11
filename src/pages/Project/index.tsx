@@ -13,6 +13,7 @@ import { Aerial1, Balcony } from "../../images";
 import Slideshow from "../../components/Slideshow";
 import ContactForm from "../../components/ContactForm";
 import Footer from "../../components/Footer";
+import { Button } from "semantic-ui-react";
 
 const Project: React.FC = () => {
   const { projectId } = useParams();
@@ -44,13 +45,13 @@ const Project: React.FC = () => {
       <Section className="center-row">
         <Wrapper>
           <Views>
-            <img className="views__image-one" src={Aerial1} />
+            <img className="views__image-one" src={Aerial1} loading="lazy" />
             <p className="views__text">
               É um lugar para receber amigos e familiares, para criar memórias e
               compartilhar momentos, tudo rodeado pelas vistas deslumbrantes que
               só a região do Douro pode proporcionar.
             </p>
-            <img className="views__image-two" src={Balcony} />
+            <img className="views__image-two" src={Balcony} loading="lazy" />
           </Views>
         </Wrapper>
       </Section>
@@ -59,7 +60,7 @@ const Project: React.FC = () => {
           <Blueprints className="center-column">
             <header>Apartamentos</header>
             <h2>Cada apartamento é especial!</h2>
-            <button>Ver plantas</button>
+            <Button>Ver plantas</Button>
           </Blueprints>
         </Wrapper>
       </Section>

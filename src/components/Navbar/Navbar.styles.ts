@@ -13,6 +13,7 @@ export const NavbarContainer = styled.div`
 
 export const Nav = styled.ul`
   display: none;
+  box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
 
   @media ${device.tablet} {
     display: flex;
