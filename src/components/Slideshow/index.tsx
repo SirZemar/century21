@@ -69,8 +69,7 @@ const Slideshow: React.FC = () => {
         indicators={true}
         cssClass="slideshow"
         {...arrowProperties}
-        // autoplay={screenWidth > deviceWidth.laptop ? true : false}
-        autoplay={false}
+        autoplay={screenWidth > deviceWidth.laptop ? true : false}
       >
         {images.map((image) => (
           <div
