@@ -12,8 +12,10 @@ import { useParams } from "react-router-dom";
 import { Aerial1, Balcony } from "../../images";
 import Slideshow from "../../components/Slideshow";
 import ContactForm from "../../components/ContactForm";
-import Footer from "../../components/Footer";
+import Location from "../../components/Location";
 import { Button } from "semantic-ui-react";
+import { translate } from "../../translate";
+import SectionHeader from "../../comon/components/SectionHeader";
 
 const Project: React.FC = () => {
   const { projectId } = useParams();
@@ -32,13 +34,9 @@ const Project: React.FC = () => {
       <Section className="background-color-primary center-row">
         <Wrapper>
           <Overview>
-            <header className="overview__header">Vista Geral</header>
-            <h2 className="overview__title">Apartamentos beira rio</h2>
-            <p className="overview__text">
-              Apartamentos de luxo localizados numa das melhores zonas da
-              cidade. Todos os apartamentos têm uma vista de excelência e uma
-              varanda na qual pode apreciar a beleza interminável do rio Douro.
-            </p>
+            <SectionHeader>{translate.OVERVIEW.HEADER}</SectionHeader>
+            <h2 className="overview__title">{translate.OVERVIEW.TITLE}</h2>
+            <p className="overview__text">{translate.OVERVIEW.DESCRIPTION}</p>
           </Overview>
         </Wrapper>
       </Section>
@@ -46,11 +44,7 @@ const Project: React.FC = () => {
         <Wrapper>
           <Views>
             <img className="views__image-one" src={Aerial1} loading="lazy" />
-            <p className="views__text">
-              É um lugar para receber amigos e familiares, para criar memórias e
-              compartilhar momentos, tudo rodeado pelas vistas deslumbrantes que
-              só a região do Douro pode proporcionar.
-            </p>
+            <p className="views__text">{translate.OVERVIEW.TEXT}</p>
             <img className="views__image-two" src={Balcony} loading="lazy" />
           </Views>
         </Wrapper>
@@ -58,9 +52,10 @@ const Project: React.FC = () => {
       <Section className="background-color-secondary center-row">
         <Wrapper>
           <Blueprints className="center-column">
-            <header>Apartamentos</header>
-            <h2>Cada apartamento é especial!</h2>
-            <Button>Ver plantas</Button>
+            <SectionHeader>{translate.APARTMENTS.HEADER}</SectionHeader>
+            <h2>{translate.APARTMENTS.TITLE}</h2>
+            <p>{translate.APARTMENTS.DESCRIPTION}</p>
+            <Button>{translate.APARTMENTS.BLUEPRINTS.BUTTON}</Button>
           </Blueprints>
         </Wrapper>
       </Section>
@@ -70,7 +65,7 @@ const Project: React.FC = () => {
         </Wrapper>
       </Section>
       <Section>
-        <Footer />
+        <Location />
       </Section>
       <Section className="center-row">
         <Wrapper>
