@@ -4,13 +4,18 @@ import { heightNoNavbar } from "../../utils.styles";
 export const SlideshowContainer = styled.div<any>`
   .slideshow {
     max-width: 100%;
+    background-color: var(--primary);
+    height: ${heightNoNavbar("90vh")};
 
-    &__slide {
-      height: ${heightNoNavbar("90vh")};
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-color: var(--primary);
+    &__slide-image {
+      max-width: 100%;
+      user-select: none;
+      object-fit: contain;
+    }
+
+    .images-wrap,
+    .images-wrap > div {
+      height: 100%;
     }
   }
   .indicators {
