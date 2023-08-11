@@ -70,6 +70,7 @@ export const Overview = styled.div`
   .overview {
     &__text {
       max-width: 600px;
+      text-align: center;
     }
   }
 
@@ -84,6 +85,13 @@ export const Views = styled.div`
     &__image-one,
     &__image-two {
       max-width: 100%;
+    }
+
+    &__text {
+      text-align: center;
+      @media ${device.tablet} {
+        text-align: start;
+      }
     }
   }
 
