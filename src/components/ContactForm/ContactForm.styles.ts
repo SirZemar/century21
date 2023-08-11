@@ -4,9 +4,15 @@ import { device } from "../../devices";
 export const ContactFormContainer = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding: 20px;
 
-  && .form {
+  header {
+    font-size: 2rem;
+  }
+
+  .form {
     max-width: 80%;
     width: 100%;
 

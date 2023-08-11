@@ -1,14 +1,29 @@
 import React from "react";
 import { SectionHeaderContainer } from "./SectionHeader.styles";
-import TitleDecoration from "../TitleDecoration";
+import TitleDecorator from "../TitleDecorator";
+import {
+  TitleDecoratorImgSize,
+  ImageSize,
+  TitleDecoratorImgColor,
+  ImageColor,
+} from "../TitleDecorator";
 
 interface Props {
   children: string;
+  size?: ImageSize;
+  color?: ImageColor;
 }
-const SectionHeader: React.FC<Props> = ({ children }) => {
+
+const SectionHeader: React.FC<Props> = ({
+  children,
+  size = TitleDecoratorImgSize.SMALL,
+  color = TitleDecoratorImgColor.SECONDARY,
+}) => {
   return (
     <SectionHeaderContainer>
-      <TitleDecoration>{children}</TitleDecoration>
+      <TitleDecorator size={size} color={color}>
+        {children}
+      </TitleDecorator>
     </SectionHeaderContainer>
   );
 };

@@ -12,6 +12,11 @@ import { translate } from "../../translate";
 import { useParams } from "react-router-dom";
 import SectionHeader from "../../comon/components/SectionHeader";
 
+import {
+  TitleDecoratorImgColor,
+  TitleDecoratorImgSize,
+} from "../../comon/components/TitleDecorator";
+
 const SERVICE_ID = process.env.REACT_APP_SERVICE_ID as string;
 const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID as string;
 const USER_ID = process.env.REACT_APP_USER_ID as string;
@@ -102,7 +107,12 @@ const ContactForm: React.FC = () => {
 
   return (
     <ContactFormContainer>
-      <SectionHeader>{translate.CONTACT.HEADER}</SectionHeader>
+      <SectionHeader
+        size={TitleDecoratorImgSize.MEDIUM}
+        color={TitleDecoratorImgColor.PRIMARY}
+      >
+        {translate.CONTACT.HEADER}
+      </SectionHeader>
       <Form error noValidate ref={formRef} onSubmit={handleOnSubmit}>
         <Form.Field
           id="form-input-control-email"

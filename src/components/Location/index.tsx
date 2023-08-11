@@ -1,7 +1,7 @@
 import React from "react";
 import { LocationContainer } from "./Location.styles";
 import { Map } from "../../images";
-import TitleDecoration from "../../comon/components/TitleDecoration";
+import TitleDecorator from "../../comon/components/TitleDecorator";
 import { translate } from "../../translate";
 import SectionHeader from "../../comon/components/SectionHeader";
 
