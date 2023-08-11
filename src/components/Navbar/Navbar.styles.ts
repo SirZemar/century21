@@ -4,16 +4,21 @@ import { motion } from "framer-motion";
 
 export const NavbarContainer = styled.div`
   display: flex;
+  justify-content: center;
   height: var(--navbarHeight);
   width: 100%;
   background-color: var(--primary);
-  position: fixed;
+  position: sticky;
+  top: -2px;
   z-index: 1000;
+  box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+
+  @media ${device.laptop} {
+  }
 `;
 
 export const Nav = styled.ul`
   display: none;
-  box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
 
   @media ${device.tablet} {
     display: flex;
@@ -31,6 +36,8 @@ export const NavItem = styled.li`
 
 export const Menu = styled.div`
   z-index: 100;
+  width: 100vw;
+
   @media ${device.tablet} {
     display: none;
   }
@@ -38,10 +45,16 @@ export const Menu = styled.div`
 
 export const MenuNav = styled(motion.ul)`
   background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
   z-index: 100;
 `;
 
 export const MenuNavItem = styled.li`
-  padding: 10px 40px;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5rem;
 `;
