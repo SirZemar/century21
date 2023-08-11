@@ -44,7 +44,9 @@ const Project: React.FC = () => {
         <Wrapper>
           <Views>
             <img className="views__image-one" src={Aerial1} loading="lazy" />
-            <p className="views__text">{translate.OVERVIEW.TEXT}</p>
+            <div className="views__text-container">
+              <p className="views__text">{translate.OVERVIEW.TEXT}</p>
+            </div>
             <img className="views__image-two" src={Balcony} loading="lazy" />
           </Views>
         </Wrapper>
@@ -71,6 +73,11 @@ const Project: React.FC = () => {
         <Wrapper>
           <ContactForm />
         </Wrapper>
+      </Section>
+      <Section>
+        <footer
+          style={{ backgroundColor: "var(--primary)", height: "60px" }}
+        ></footer>
       </Section>
     </ProjectContainer>
   );

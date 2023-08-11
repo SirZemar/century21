@@ -37,7 +37,7 @@ export const NavItem = styled.li`
 export const Menu = styled.div`
   z-index: 100;
   width: 100vw;
-
+  height: 100vh;
   @media ${device.tablet} {
     display: none;
   }
@@ -54,7 +54,7 @@ export const MenuNav = styled(motion.ul)`
 `;
 
 export const MenuNavItem = styled.li`
-  padding: 10px;
+  padding: 20px;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
 `;

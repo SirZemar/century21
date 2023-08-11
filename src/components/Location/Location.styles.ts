@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Map } from "../../images";
 import { heightNoNavbar } from "../../utils.styles";
 import { device } from "../../devices";
-export const LocationContainer = styled.footer`
+export const LocationContainer = styled.div`
   && {
     height: 100%;
     width: 100%;

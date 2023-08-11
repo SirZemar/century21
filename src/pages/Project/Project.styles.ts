@@ -64,7 +64,7 @@ export const Overview = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: ${heightNoNavbar("100vh")};
+  min-height: ${heightNoNavbar("80vh")};
   color: var(--light);
 
   .overview {
@@ -87,8 +87,22 @@ export const Views = styled.div`
       max-width: 100%;
     }
 
+    &__text-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: ${heightNoNavbar("30vh")};
+      min-height: 300px;
+
+      @media ${device.laptop} {
+        height: auto;
+        min-height: auto;
+      }
+    }
     &__text {
       text-align: center;
+
       @media ${device.tablet} {
         text-align: start;
       }
@@ -99,8 +113,8 @@ export const Views = styled.div`
     padding: 20px;
     display: grid;
     grid-template:
-      "a b" 60%
-      "c b" 40% / 50% 50%;
+      "a b" 45%
+      "c b" 55% / 40% 60%;
     .views {
       &__image-one,
       &__image-two {
@@ -123,12 +137,12 @@ export const Views = styled.div`
       }
     }
   }
+
   @media ${device.laptop} {
     grid-template:
-      "a b" 60%
-      "c b" 40% / 50% 50%;
+      "a b" 50%
+      "c b" 50% / 50% 50%;
   }
-
   @media ${device.desktop} {
     grid-template:
       "a b" 80%
@@ -136,4 +150,11 @@ export const Views = styled.div`
   }
 `;
 
-export const Blueprints = styled.div``;
+export const Blueprints = styled.div`
+  padding: 40px 0px;
+  text-align: center;
+
+  @media ${device.laptop} {
+    padding: 0px;
+  }
+`;

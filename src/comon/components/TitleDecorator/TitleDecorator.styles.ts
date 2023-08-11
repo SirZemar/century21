@@ -12,6 +12,7 @@ export const TitleDecoratorContainer = styled.div`
 
 export const Image = styled.img<Props>`
   max-height: ${({ size }) => size};
+  width: 100%;
   // Needs to be change to be able to select an exact color
   filter: ${({ color }) =>
     color === TitleDecoratorImgColor.PRIMARY
