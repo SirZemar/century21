@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { heightNoNavbar } from "../../utils.styles";
 
-export const SlideshowContainer = styled.div<any>`
+export const SlideshowContainer = styled.div`
   .slideshow {
     max-width: 100%;
     background-color: var(--primary);
