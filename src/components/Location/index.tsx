@@ -1,11 +1,11 @@
 import React from "react";
 import { LocationContainer } from "./Location.styles";
-import { Map } from "../../images";
-import TitleDecorator from "../../comon/components/TitleDecorator";
 import { translate } from "../../translate";
 import SectionHeader from "../../comon/components/SectionHeader";
-
+import Map from "../Map";
 const Location: React.FC = () => {
+  
+  
   return (
     <LocationContainer>
       <div className="location__info">
@@ -23,7 +23,9 @@ const Location: React.FC = () => {
           </li>
         </ul>
       </div>
-      <div className="map"></div>
+      <div className="map-container">
+       <Map />
+      </div>
     </LocationContainer>
   );
 };

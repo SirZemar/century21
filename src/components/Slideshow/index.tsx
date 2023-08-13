@@ -71,8 +71,9 @@ const Slideshow: React.FC = () => {
         {...arrowProperties}
         autoplay={screenWidth > deviceWidth.laptop ? true : false}
       >
-        {images.map((image) => (
+        {images.map((image, index) => (
           <div
+            key={index}
             style={{
               display: "flex",
               justifyContent: "center",
@@ -82,7 +83,6 @@ const Slideshow: React.FC = () => {
             <img
               src={image}
               className="slideshow__slide-image"
-              // sizes="(max-width: 1200px) 300w"
             />
           </div>
         ))}

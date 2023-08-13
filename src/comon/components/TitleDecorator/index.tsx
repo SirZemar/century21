@@ -46,7 +46,6 @@ const TitleDecorator: React.FC<Props> = ({
   } else if (color == TitleDecoratorImgColor.SECONDARY) {
     imageColor = "var(--secondary)";
   }
-  console.log(size);
 
   return (
     <TitleDecoratorContainer>
