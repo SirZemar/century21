@@ -25,6 +25,10 @@ const router = createBrowserRouter([
         path: "projects/:projectId",
         element: <Project />,
       },
+      {
+        path: "documents/blueprints.pdf",
+        element: <iframe src="https://docs.google.com/gview?url=documents/blueprints.pdf&embedded=true" width="100vw" height="100vh"></iframe>
+      }
     ],
   },
 ]);

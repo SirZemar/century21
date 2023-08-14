@@ -20,6 +20,10 @@ import SectionHeader from "../../comon/components/SectionHeader";
 const Project: React.FC = () => {
   const { projectId } = useParams();
 
+  const handleBlueprintsButtonClick = () => {
+    window.open("../../documents/blueprints.pdf", '_blank')
+  }
+
   return (
     <ProjectContainer>
       <Section
@@ -57,7 +61,7 @@ const Project: React.FC = () => {
             <SectionHeader>{translate.APARTMENTS.HEADER}</SectionHeader>
             <h2>{translate.APARTMENTS.TITLE}</h2>
             <p>{translate.APARTMENTS.DESCRIPTION}</p>
-            <Button>{translate.APARTMENTS.BLUEPRINTS.BUTTON}</Button>
+            <Button onClick={handleBlueprintsButtonClick}>{translate.APARTMENTS.BLUEPRINTS.BUTTON}</Button>
           </Blueprints>
         </Wrapper>
       </Section>

@@ -19,7 +19,7 @@ export const NavbarContainer = styled.div`
 
 export const Nav = styled.ul`
   display: none;
-
+  padding: 0 40px ;
   @media ${device.tablet} {
     display: flex;
     justify-content: flex-start;

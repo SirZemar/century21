@@ -55,7 +55,7 @@ export const HeroImage = styled.div`
   display: block;
   background-size: cover;
   width: 100%;
-  height: 100vh;
+  height: ${heightNoNavbar('100vh')};
 `;
 
 export const Overview = styled.div`

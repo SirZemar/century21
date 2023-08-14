@@ -11,13 +11,14 @@ import { NavLink } from "react-router-dom";
 import { Divide as Hamburger } from "hamburger-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Wrapper } from "../../pages/Project/Project.styles";
+import { Logo } from "../../images";
 
 const NavbarC: React.FC = () => {
   const [isOpen, setOpen] = useState(false);
   return (
     <NavbarContainer>
-      <Wrapper>
         <Nav>
+          <img style={{height: "60%"}} src={Logo} />
           <NavItem>
             <NavLink to={"/"}>Home</NavLink>
           </NavItem>
@@ -53,7 +54,6 @@ const NavbarC: React.FC = () => {
             )}
           </AnimatePresence>
         </Menu>
-      </Wrapper>
     </NavbarContainer>
   );
 };
