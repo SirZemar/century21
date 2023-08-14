@@ -19,7 +19,7 @@ export const NavbarContainer = styled.div`
 
 export const Nav = styled.ul`
   display: none;
-  padding: 0 40px ;
+  padding: 0 40px;
   @media ${device.tablet} {
     display: flex;
     justify-content: flex-start;
@@ -32,12 +32,15 @@ export const Nav = styled.ul`
 export const NavItem = styled.li`
   padding: 0 10px;
   display: inline;
+
+  a:hover {
+    color: var(--secondary);
+  }
 `;
 
 export const Menu = styled.div`
   z-index: 100;
   width: 100vw;
-  height: 100vh;
   @media ${device.tablet} {
     display: none;
   }

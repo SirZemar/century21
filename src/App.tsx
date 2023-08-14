@@ -8,7 +8,7 @@ const App: React.FC = () => {
     <>
       <GlobalStyles />
       <Navbar />
-      <div style={{ paddingTop: "var(--navbarHeight)" }}></div>
+      {/* <div style={{ paddingTop: "var(--navbarHeight)" }}></div> */}
       <Outlet />
     </>
   );

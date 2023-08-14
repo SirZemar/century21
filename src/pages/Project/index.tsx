@@ -6,9 +6,9 @@ import {
   Views,
   Overview,
   Wrapper,
-  Blueprints,
+  BlueprintsContainer,
 } from "./Project.styles";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Aerial1, Balcony } from "../../images";
 import Slideshow from "../../components/Slideshow";
 import ContactForm from "../../components/ContactForm";
@@ -16,13 +16,15 @@ import Location from "../../components/Location";
 import { Button } from "semantic-ui-react";
 import { translate } from "../../translate";
 import SectionHeader from "../../comon/components/SectionHeader";
+import Footer from "../../components/Footer";
 
 const Project: React.FC = () => {
   const { projectId } = useParams();
+  const navigate = useNavigate();
 
   const handleBlueprintsButtonClick = () => {
-    window.open("../../documents/blueprints.pdf", '_blank')
-  }
+    navigate("blueprints");
+  };
 
   return (
     <ProjectContainer>
@@ -57,12 +59,14 @@ const Project: React.FC = () => {
       </Section>
       <Section className="background-color-secondary center-row">
         <Wrapper>
-          <Blueprints className="center-column">
+          <BlueprintsContainer className="center-column">
             <SectionHeader>{translate.APARTMENTS.HEADER}</SectionHeader>
             <h2>{translate.APARTMENTS.TITLE}</h2>
             <p>{translate.APARTMENTS.DESCRIPTION}</p>
-            <Button onClick={handleBlueprintsButtonClick}>{translate.APARTMENTS.BLUEPRINTS.BUTTON}</Button>
-          </Blueprints>
+            <Button onClick={handleBlueprintsButtonClick}>
+              {translate.APARTMENTS.BLUEPRINTS.BUTTON}
+            </Button>
+          </BlueprintsContainer>
         </Wrapper>
       </Section>
       <Section className="center-row">
@@ -78,10 +82,8 @@ const Project: React.FC = () => {
           <ContactForm />
         </Wrapper>
       </Section>
-      <Section>
-        <footer
-          style={{ backgroundColor: "var(--primary)", height: "60px" }}
-        ></footer>
+      <Section style={{ padding: "0px" }}>
+        <Footer />
       </Section>
     </ProjectContainer>
   );

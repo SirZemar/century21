@@ -7,6 +7,7 @@ import Page404 from "./pages/Page404";
 import Projects from "./pages/Projects";
 import Home from "./pages/Home";
 import Project from "./pages/Project";
+import Blueprints from "./pages/Blueprints";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        // element: <Home />,
+        element: <Project />,
       },
       {
         path: "projects",
@@ -26,9 +28,13 @@ const router = createBrowserRouter([
         element: <Project />,
       },
       {
-        path: "documents/blueprints.pdf",
-        element: <iframe src="https://docs.google.com/gview?url=documents/blueprints.pdf&embedded=true" width="100vw" height="100vh"></iframe>
-      }
+        path: "projects/:projectId/blueprints",
+        element: <Blueprints />,
+      },
+      {
+        path: "blueprints",
+        element: <Blueprints />,
+      },
     ],
   },
 ]);

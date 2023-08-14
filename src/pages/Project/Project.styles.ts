@@ -55,7 +55,7 @@ export const HeroImage = styled.div`
   display: block;
   background-size: cover;
   width: 100%;
-  height: ${heightNoNavbar('100vh')};
+  height: 100vh;
 `;
 
 export const Overview = styled.div`
@@ -102,10 +102,6 @@ export const Views = styled.div`
     }
     &__text {
       text-align: center;
-
-      @media ${device.tablet} {
-        text-align: start;
-      }
     }
   }
 
@@ -150,7 +146,7 @@ export const Views = styled.div`
   }
 `;
 
-export const Blueprints = styled.div`
+export const BlueprintsContainer = styled.div`
   padding: 40px 0px;
   text-align: center;
 

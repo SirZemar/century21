@@ -31,15 +31,26 @@ export const GlobalStyles = createGlobalStyle`
 }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family:'Roboto',  -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--light);
+  -webkit-tap-highlight-color: transparent;
+
 }
 h1, h2, h3, h4, p, ul, li {
   margin: 0;
+}
+
+h1, h2, header {
+  font-family: 'Fjalla One', sans-serif;
+  letter-spacing: 0.7px;
+  /* font-weight: 500; */
+}
+header{
+  letter-spacing: 0;
 }
 
 ul {

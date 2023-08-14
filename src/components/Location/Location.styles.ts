@@ -49,10 +49,9 @@ export const LocationContainer = styled.div`
     /* background-repeat: no-repeat;
     background-position: center;
     background-size: cover; */
-
   }
   .map {
-    width: 100%, 
-    height: 100%
+    width: 100%;
+    height: 100%;
   }
 `;
