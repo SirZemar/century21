@@ -1,5 +1,6 @@
 import React from "react";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
+import { Logo } from "../../images";
 
 const Map: React.FC = () => {
   let mapApiKey = "";
@@ -32,18 +33,25 @@ const Map: React.FC = () => {
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: mapApiKey,
     id: mapId,
+    language: "pt",
   });
 
   return (
     <>
-      {!isLoaded && <div>Loading...</div>}
+      {/* {!isLoaded && <div>Loading...</div>} */}
       {isLoaded && (
         <GoogleMap
           options={{ mapId }}
           mapContainerStyle={containerStyle}
           zoom={15}
           center={center}
-        ></GoogleMap>
+        >
+          <Marker
+            position={center}
+            title="Douro 39"
+            label="Douro 39 Riverside Apartments"
+          />
+        </GoogleMap>
       )}
     </>
   );

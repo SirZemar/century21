@@ -44,6 +44,10 @@ h1, h2, h3, h4, p, ul, li {
   margin: 0;
 }
 
+p {
+  padding: 0;
+}
+
 h1, h2, header {
   font-family: 'Fjalla One', sans-serif;
   letter-spacing: 0.7px;
@@ -58,7 +62,7 @@ ul {
   padding: 0;
 }
 
-a {
+a, a:hover {
   text-decoration: none;
   color: var(--secondary);
 }
@@ -76,7 +80,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 h3 {
@@ -88,7 +92,7 @@ h4 {
 }
 
 p {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
 
   @media ${device.tablet} {
     font-size: 1.4rem;

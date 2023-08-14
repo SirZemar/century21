@@ -82,8 +82,13 @@ const Project: React.FC = () => {
           <ContactForm />
         </Wrapper>
       </Section>
-      <Section style={{ padding: "0px" }}>
-        <Footer />
+      <Section
+        className="background-color-primary center-row"
+        style={{ padding: "0px" }}
+      >
+        <Wrapper>
+          <Footer />
+        </Wrapper>
       </Section>
     </ProjectContainer>
   );

@@ -6,8 +6,6 @@ export const ContactFormContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 40px 20px;
-
   header {
     font-size: 2rem;
   }
@@ -17,9 +15,16 @@ export const ContactFormContainer = styled.div`
     width: 100%;
 
     @media ${device.tablet} {
-      max-width: 100%;
+      max-width: 60%;
     }
 
+    .field > label {
+      font-size: 1.2rem;
+
+      @media ${device.laptop} {
+        font-size: 1rem;
+      }
+    }
     .error-message {
       p {
         padding: 0;

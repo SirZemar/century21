@@ -20,7 +20,9 @@ const SectionHeader: React.FC<Props> = ({
   color = TitleDecoratorImgColor.SECONDARY,
 }) => {
   return (
-    <SectionHeaderContainer>
+    <SectionHeaderContainer
+      className={size === TitleDecoratorImgSize.MEDIUM ? "medium-size" : ""}
+    >
       <TitleDecorator size={size} color={color}>
         {children}
       </TitleDecorator>

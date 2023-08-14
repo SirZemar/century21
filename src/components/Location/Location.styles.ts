@@ -38,6 +38,8 @@ export const LocationContainer = styled.div`
     }
     &__list {
       &__item {
+        font-size: 1.4rem;
+        white-space: nowrap;
       }
     }
   }
