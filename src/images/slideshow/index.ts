@@ -1,12 +1,12 @@
-import image11 from "./1.jpg";
-import image22 from "./2.jpg";
-import image33 from "./3.jpg";
-import image44 from "./4.jpg";
-import image55 from "./5.jpg";
-import image66 from "./6.jpg";
-import image77 from "./7.jpg";
-import image88 from "./8.jpg";
-import image99 from "./9.jpg";
+import image11 from "./image11.jpg";
+import image22 from "./image22.jpg";
+import image33 from "./image33.jpg";
+import image44 from "./image44.jpg";
+import image55 from "./image55.jpg";
+import image66 from "./image66.jpg";
+import image77 from "./image77.jpg";
+import image88 from "./image88.jpg";
+import image99 from "./image99.jpg";
 
 export const slideshowImages = [
   image11,

@@ -10,6 +10,8 @@ export const GlobalStyles = createGlobalStyle`
   --primary: #252526;
   --primaryLight: #858586;
   --secondary: #BEAF87;
+  --secondaryLight: #E6E1D5;
+  --secondaryDark: #998D6D;
   --light: #F6F6F6;
 
   --navbarHeight: 50px;

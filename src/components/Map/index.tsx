@@ -1,6 +1,6 @@
 import React from "react";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
-import { Logo } from "../../images";
+import { LogoMapMarker } from "../../images";
 
 const Map: React.FC = () => {
   let mapApiKey = "";
@@ -46,11 +46,7 @@ const Map: React.FC = () => {
           zoom={15}
           center={center}
         >
-          <Marker
-            position={center}
-            title="Douro 39"
-            label="Douro 39 Riverside Apartments"
-          />
+          <Marker position={center} title="Douro 39" icon={LogoMapMarker} />
         </GoogleMap>
       )}
     </>

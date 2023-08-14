@@ -62,7 +62,6 @@ const ContactForm: React.FC = () => {
       phone,
       message,
       name,
-      projectId,
     };
     emailjs.send(SERVICE_ID, TEMPLATE_ID, payload, USER_ID).then(
       (result) => {

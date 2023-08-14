@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { HeroHouse } from "../../images";
 import { heightNoNavbar } from "../../utils.styles";
 import { device } from "../../devices";
@@ -49,13 +49,19 @@ export const Wrapper = styled.div`
   }
 `;
 
+const kf = keyframes`
+  to{ filter:none}
+`;
+
 export const HeroImage = styled.div`
   background-image: url("${HeroHouse}");
+  filter: grayscale(100%) brightness(20%);
   background-position: center;
   display: block;
   background-size: cover;
   width: 100%;
   height: 100vh;
+  animation: ${kf} 1s linear forwards;
 `;
 
 export const Overview = styled.div`
@@ -75,16 +81,18 @@ export const Overview = styled.div`
   }
 
   @media ${device.tablet} {
-    min-height: 30vh;
+    min-height: 40vh;
   }
 `;
 
 export const Views = styled.div`
-  min-height: ${heightNoNavbar("60vh")};
   .views {
     &__image-one,
     &__image-two {
+      width: 100%;
+      height: 100%;
       max-width: 100%;
+      object-fit: cover;
     }
 
     &__text-container {

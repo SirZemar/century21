@@ -28,6 +28,29 @@ const Project: React.FC = () => {
 
   return (
     <ProjectContainer>
+      {/* Experiment of style */}
+      {/* <div
+        style={{
+          display: "block",
+          position: "absolute",
+          top: "inset",
+          backgroundColor: "var(--primary)",
+          height: "1500px",
+          width: "100vw",
+          zIndex: "-1",
+        }}
+      ></div>
+      <div
+        style={{
+          display: "block",
+          position: "absolute",
+          top: "inset",
+          backgroundColor: "var(--secondary)",
+          height: "2000px",
+          width: "100vw",
+          zIndex: "-2",
+        }}
+      ></div> */}
       <Section
         style={{
           marginTop: "calc(0px - var(--navbarHeight))",

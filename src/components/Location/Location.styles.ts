@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Map } from "../../images";
 import { heightNoNavbar } from "../../utils.styles";
 import { device } from "../../devices";
 export const LocationContainer = styled.div`
@@ -40,12 +39,18 @@ export const LocationContainer = styled.div`
       &__item {
         font-size: 1.4rem;
         white-space: nowrap;
+        @media ${device.tablet} {
+          font-size: 1.2rem;
+          white-space: normal;
+        }
+        @media ${device.laptop} {
+          font-size: 1rem;
+        }
       }
     }
   }
   .map-container {
     display: block;
-    /* background-image: url(${Map}); */
     height: 100%;
     width: 100%;
     /* background-repeat: no-repeat;

@@ -1,6 +1,7 @@
 {
   "name": "century21",
   "version": "0.1.0",
+  "homepage": "http://realstateporto.com/",
   "private": true,
   "dependencies": {
     "@react-google-maps/api": "^2.19.2",
