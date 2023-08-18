@@ -21,6 +21,10 @@ export const GlobalStyles = createGlobalStyle`
   }
 }
 
+*, html {
+  // may affect scrollIntoView
+    scroll-behavior: smooth !important;
+}
 * {
   box-sizing: border-box;
 

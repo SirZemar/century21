@@ -16,6 +16,10 @@ import Logo from "../Logo";
 const NavbarC: React.FC = () => {
   const [isOpen, setOpen] = useState(false);
 
+  const handleMunuNavItemClick = () => {
+    setOpen(false);
+  };
+
   return (
     <NavbarContainer>
       <Nav>
@@ -26,6 +30,18 @@ const NavbarC: React.FC = () => {
           <NavItem>
           <NavLink to={"/projects"}>Projects</NavLink>
         </NavItem> */}
+        <NavItem>
+          <a href="/#overview">Vista Geral</a>
+        </NavItem>
+        <NavItem>
+          <a href="/#apartments">Apartamentos</a>
+        </NavItem>
+        <NavItem>
+          <a href="/#location">Localização</a>
+        </NavItem>
+        <NavItem>
+          <a href="/#contact">Contacto</a>
+        </NavItem>
       </Nav>
       <Menu>
         <Hamburger toggled={isOpen} toggle={setOpen} color="var(--secondary)" />
@@ -39,14 +55,34 @@ const NavbarC: React.FC = () => {
               exit={{ translateX: "-100%", transition: { duration: 0.2 } }}
             >
               <MenuNavItem>
-                <NavLink to={"/"} onClick={() => setOpen(false)}>
+                {/* <NavLink to={"/"} onClick={() => setOpen(false)}>
                   Home
                 </NavLink>
               </MenuNavItem>
               <MenuNavItem>
                 <NavLink to={"/projects"} onClick={() => setOpen(false)}>
                   Project
-                </NavLink>
+                </NavLink> */}
+                <MenuNavItem>
+                  <a onClick={handleMunuNavItemClick} href="/#overview">
+                    Vista Geral
+                  </a>
+                </MenuNavItem>
+                <MenuNavItem>
+                  <a onClick={handleMunuNavItemClick} href="/#apartments">
+                    Apartamentos
+                  </a>
+                </MenuNavItem>
+                <MenuNavItem>
+                  <a onClick={handleMunuNavItemClick} href="/#location">
+                    Localização
+                  </a>
+                </MenuNavItem>
+                <MenuNavItem>
+                  <a onClick={handleMunuNavItemClick} href="/#contact">
+                    Contacto
+                  </a>
+                </MenuNavItem>
               </MenuNavItem>
             </MenuNav>
           )}

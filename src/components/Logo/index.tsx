@@ -12,6 +12,7 @@ const Logo: React.FC<Props> = ({ short = false }) => {
 
   const logoHandleClick = () => {
     navigate("/");
+    window.scrollTo({ top: 0 });
   };
   return (
     <LogoContainer className={short ? "short" : ""}>

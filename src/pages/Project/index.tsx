@@ -73,7 +73,7 @@ const Project: React.FC = () => {
           />
         </HeroImage>
       </Section>
-      <Section className="background-color-primary center-row">
+      <Section id="overview" className="background-color-primary center-row">
         <Wrapper>
           <Overview>
             <SectionHeader>{translate.OVERVIEW.HEADER}</SectionHeader>
@@ -103,7 +103,10 @@ const Project: React.FC = () => {
           </Views>
         </Wrapper>
       </Section>
-      <Section className="background-color-secondary center-row">
+      <Section
+        id="apartments"
+        className="background-color-secondary center-row"
+      >
         <Wrapper>
           <BlueprintsContainer className="center-column">
             <SectionHeader>{translate.APARTMENTS.HEADER}</SectionHeader>
@@ -120,10 +123,10 @@ const Project: React.FC = () => {
           <Slideshow />
         </Wrapper>
       </Section>
-      <Section>
+      <Section id="location">
         <Location />
       </Section>
-      <Section className="center-row">
+      <Section id="contact" className="center-row">
         <Wrapper>
           <ContactForm />
         </Wrapper>

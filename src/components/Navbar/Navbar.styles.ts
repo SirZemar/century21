@@ -32,7 +32,7 @@ export const Nav = styled.ul`
 export const NavItem = styled.li`
   padding: 0 10px;
   display: inline;
-
+  white-space: nowrap;
   a:hover {
     color: var(--secondary);
   }

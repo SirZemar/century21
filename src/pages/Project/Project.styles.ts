@@ -32,6 +32,13 @@ export const Section = styled.section`
     background-color: var(--light);
   }
 
+  &&#overview,
+  &&#apartments,
+  &&#location,
+  &&#contact {
+    scroll-margin-block-start: calc(var(--navbarHeight) - 5px);
+  }
+
   @media ${device.tablet} {
     padding: 40px 0;
   }
