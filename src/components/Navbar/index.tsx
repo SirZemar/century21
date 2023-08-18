@@ -12,8 +12,9 @@ import { Divide as Hamburger } from "hamburger-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Wrapper } from "../../pages/Project/Project.styles";
 import Logo from "../Logo";
+import { translate } from "../../translate";
 
-const NavbarC: React.FC = () => {
+const Navbar: React.FC = () => {
   const [isOpen, setOpen] = useState(false);
 
   const handleMunuNavItemClick = () => {
@@ -22,8 +23,8 @@ const NavbarC: React.FC = () => {
 
   return (
     <NavbarContainer>
+      <Logo className="nav-item" />
       <Nav>
-        <Logo />
         {/* <NavItem>
           <NavLink to={"/"}>Home</NavLink>
           </NavItem>
@@ -31,16 +32,16 @@ const NavbarC: React.FC = () => {
           <NavLink to={"/projects"}>Projects</NavLink>
         </NavItem> */}
         <NavItem>
-          <a href="/#overview">Vista Geral</a>
+          <a href="/#overview">{translate.NAVIGATION.OVERVIEW}</a>
         </NavItem>
         <NavItem>
-          <a href="/#apartments">Apartamentos</a>
+          <a href="/#apartments"> {translate.NAVIGATION.APARTMENTS}</a>
         </NavItem>
         <NavItem>
-          <a href="/#location">Localização</a>
+          <a href="/#location"> {translate.NAVIGATION.LOCATION}</a>
         </NavItem>
         <NavItem>
-          <a href="/#contact">Contacto</a>
+          <a href="/#contact"> {translate.NAVIGATION.CONTACT}</a>
         </NavItem>
       </Nav>
       <Menu>
@@ -54,35 +55,35 @@ const NavbarC: React.FC = () => {
               animate={{ translateX: "0%", transition: { duration: 0.2 } }}
               exit={{ translateX: "-100%", transition: { duration: 0.2 } }}
             >
-              <MenuNavItem>
-                {/* <NavLink to={"/"} onClick={() => setOpen(false)}>
+              {/* <MenuNavItem> 
+              <NavLink to={"/"} onClick={() => setOpen(false)}>
                   Home
                 </NavLink>
               </MenuNavItem>
               <MenuNavItem>
                 <NavLink to={"/projects"} onClick={() => setOpen(false)}>
                   Project
-                </NavLink> */}
-                <MenuNavItem>
-                  <a onClick={handleMunuNavItemClick} href="/#overview">
-                    Vista Geral
-                  </a>
-                </MenuNavItem>
-                <MenuNavItem>
-                  <a onClick={handleMunuNavItemClick} href="/#apartments">
-                    Apartamentos
-                  </a>
-                </MenuNavItem>
-                <MenuNavItem>
-                  <a onClick={handleMunuNavItemClick} href="/#location">
-                    Localização
-                  </a>
-                </MenuNavItem>
-                <MenuNavItem>
-                  <a onClick={handleMunuNavItemClick} href="/#contact">
-                    Contacto
-                  </a>
-                </MenuNavItem>
+                </NavLink> 
+              </MenuNavItem> */}
+              <MenuNavItem>
+                <a onClick={handleMunuNavItemClick} href="/#overview">
+                  {translate.NAVIGATION.OVERVIEW}
+                </a>
+              </MenuNavItem>
+              <MenuNavItem>
+                <a onClick={handleMunuNavItemClick} href="/#apartments">
+                  {translate.NAVIGATION.APARTMENTS}
+                </a>
+              </MenuNavItem>
+              <MenuNavItem>
+                <a onClick={handleMunuNavItemClick} href="/#location">
+                  {translate.NAVIGATION.LOCATION}
+                </a>
+              </MenuNavItem>
+              <MenuNavItem>
+                <a onClick={handleMunuNavItemClick} href="/#contact">
+                  {translate.NAVIGATION.CONTACT}
+                </a>
               </MenuNavItem>
             </MenuNav>
           )}
@@ -92,4 +93,4 @@ const NavbarC: React.FC = () => {
   );
 };
 
-export default NavbarC;
+export default Navbar;

@@ -1,4 +1,10 @@
 export const translate = {
+  NAVIGATION: {
+    OVERVIEW: "Vista Geral",
+    APARTMENTS: "Apartamentos",
+    LOCATION: "Localização",
+    CONTACT: "Contacto",
+  },
   OVERVIEW: {
     HEADER: "Vista Geral",
     TITLE: "Vistas para o rio Douro",

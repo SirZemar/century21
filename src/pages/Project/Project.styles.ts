@@ -36,7 +36,7 @@ export const Section = styled.section`
   &&#apartments,
   &&#location,
   &&#contact {
-    scroll-margin-block-start: calc(var(--navbarHeight) - 5px);
+    scroll-margin-block-start: calc(var(--navbarHeight) - 20px);
   }
 
   @media ${device.tablet} {

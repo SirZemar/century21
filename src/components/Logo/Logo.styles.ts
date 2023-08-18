@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../devices";
 
 export const LogoContainer = styled.div`
   display: flex;
@@ -19,5 +20,12 @@ export const LogoContainer = styled.div`
     top: 0;
     width: calc(100% - 50px);
     z-index: 2000;
+  }
+
+  &.nav-item {
+    display: none;
+    @media ${device.tablet} {
+      display: flex;
+    }
   }
 `;

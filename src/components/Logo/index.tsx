@@ -5,9 +5,10 @@ import { useNavigate } from "react-router-dom";
 
 interface Props {
   short?: boolean;
+  className?: string;
 }
 
-const Logo: React.FC<Props> = ({ short = false }) => {
+const Logo: React.FC<Props> = ({ short = false, className }) => {
   const navigate = useNavigate();
 
   const logoHandleClick = () => {
@@ -15,7 +16,7 @@ const Logo: React.FC<Props> = ({ short = false }) => {
     window.scrollTo({ top: 0 });
   };
   return (
-    <LogoContainer className={short ? "short" : ""}>
+    <LogoContainer className={short ? `short ${className}` : `${className}`}>
       <img
         alt="Logo"
         onClick={logoHandleClick}
