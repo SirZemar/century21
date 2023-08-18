@@ -16,6 +16,7 @@ const Logo: React.FC<Props> = ({ short = false }) => {
   return (
     <LogoContainer className={short ? "short" : ""}>
       <img
+        alt="Logo"
         onClick={logoHandleClick}
         style={{ height: "60%", cursor: "pointer", padding: "0 10px " }}
         src={LogoImage}

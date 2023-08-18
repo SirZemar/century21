@@ -19,9 +19,9 @@ export const translate = {
     HEADER: "Localização",
     TITLE: "Tudo o que tu precisas",
     DESCRIPTION: {
-      ITEM1: "Supermercado Pingo Doce - 200m",
-      ITEM2: "Terminal Intermodal de Campanhã - 400m",
-      ITEM3: "Alameda das Fontaínhas - 450m",
+      ITEM1: "Supermercado Pingo Doce",
+      ITEM2: "Terminal Intermodal de Campanhã",
+      ITEM3: "Alameda das Fontaínhas",
     },
   },
   CONTACT: {

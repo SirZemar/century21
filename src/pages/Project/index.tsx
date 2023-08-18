@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   HeroImage,
   ProjectContainer,
@@ -9,18 +9,28 @@ import {
   BlueprintsContainer,
 } from "./Project.styles";
 import { useNavigate, useParams } from "react-router-dom";
-import { Aerial1, Balcony } from "../../images";
+import {
+  image2Size900,
+  image2Size600,
+  image2Size300,
+  image2Size1400,
+  image2Original,
+  image3Size900,
+  image1Size900,
+} from "../../images/apartment";
 import Slideshow from "../../components/Slideshow";
 import ContactForm from "../../components/ContactForm";
 import Location from "../../components/Location";
 import { Button } from "semantic-ui-react";
 import { translate } from "../../translate";
-import SectionHeader from "../../comon/components/SectionHeader";
+import SectionHeader from "../../common/components/SectionHeader";
 import Footer from "../../components/Footer";
-
+import { device } from "../../devices";
 const Project: React.FC = () => {
   const { projectId } = useParams();
   const navigate = useNavigate();
+
+  const [loaded, setLoaded] = useState(false);
 
   const handleBlueprintsButtonClick = () => {
     navigate("blueprints");
@@ -28,29 +38,6 @@ const Project: React.FC = () => {
 
   return (
     <ProjectContainer>
-      {/* Experiment of style */}
-      {/* <div
-        style={{
-          display: "block",
-          position: "absolute",
-          top: "inset",
-          backgroundColor: "var(--primary)",
-          height: "1500px",
-          width: "100vw",
-          zIndex: "-1",
-        }}
-      ></div>
-      <div
-        style={{
-          display: "block",
-          position: "absolute",
-          top: "inset",
-          backgroundColor: "var(--secondary)",
-          height: "2000px",
-          width: "100vw",
-          zIndex: "-2",
-        }}
-      ></div> */}
       <Section
         style={{
           marginTop: "calc(0px - var(--navbarHeight))",
@@ -58,7 +45,33 @@ const Project: React.FC = () => {
           paddingTop: "0px",
         }}
       >
-        <HeroImage />
+        <HeroImage>
+          {!loaded && (
+            <div
+              style={{
+                height: "100%",
+                width: "100%",
+                backgroundImage: `url(${image2Size300})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            />
+          )}
+          <img
+            onLoad={() => {
+              setLoaded(true);
+            }}
+            className={loaded ? "loaded" : "loading"}
+            srcSet={`${image2Size300} 300w,
+            ${image2Size600} 600w,
+            ${image2Size900} 900w,
+            ${image2Size1400} 1400w,
+            ${image2Original}`}
+            sizes={`${device.tablet} 1500px`}
+            // sizes="(max-width: 600px) 600px, (max-width: 900px) 900px, (max-width: 1400px) 1400px, 1600px"
+          />
+        </HeroImage>
       </Section>
       <Section className="background-color-primary center-row">
         <Wrapper>
@@ -72,11 +85,21 @@ const Project: React.FC = () => {
       <Section className="center-row">
         <Wrapper>
           <Views>
-            <img className="views__image-one" src={Aerial1} loading="lazy" />
+            <img
+              alt="Apartment"
+              className="views__image-one"
+              src={image1Size900}
+              loading="lazy"
+            />
             <div className="views__text-container">
               <p className="views__text">{translate.OVERVIEW.TEXT}</p>
             </div>
-            <img className="views__image-two" src={Balcony} loading="lazy" />
+            <img
+              alt="Apartment"
+              className="views__image-two"
+              src={image3Size900}
+              loading="lazy"
+            />
           </Views>
         </Wrapper>
       </Section>

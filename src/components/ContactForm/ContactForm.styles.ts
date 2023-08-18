@@ -6,6 +6,7 @@ export const ContactFormContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 40px 0;
   header {
     font-size: 2rem;
   }

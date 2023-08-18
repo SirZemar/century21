@@ -1,8 +1,7 @@
 {
-  "name": "century21",
+  "name": "Douro 39",
   "version": "0.1.0",
-  "homepage": "http://realstateporto.com/",
-  "private": true,
+  "homepage": "https://realstateporto.com/",
   "dependencies": {
     "@react-google-maps/api": "^2.19.2",
     "@testing-library/jest-dom": "^5.17.0",

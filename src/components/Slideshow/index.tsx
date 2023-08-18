@@ -1,8 +1,8 @@
-import React, { useLayoutEffect, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { SlideshowContainer } from "./Slideshow.styles";
 import { Slide } from "react-slideshow-image";
 import { sizes as deviceWidth } from "../../devices";
-import { slideshowImages } from "../../images/slideshow";
+import { slideshowImages } from "../../images/apartment";
 
 const Slideshow: React.FC = () => {
   const [screenWidth, setScreenWidth] = useState(0);
@@ -80,10 +80,7 @@ const Slideshow: React.FC = () => {
               height: "100%",
             }}
           >
-            <img
-              src={image}
-              className="slideshow__slide-image"
-            />
+            <img src={image} className="slideshow__slide-image" />
           </div>
         ))}
       </Slide>

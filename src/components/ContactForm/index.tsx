@@ -10,12 +10,12 @@ import {
 
 import { translate } from "../../translate";
 import { useParams } from "react-router-dom";
-import SectionHeader from "../../comon/components/SectionHeader";
+import SectionHeader from "../../common/components/SectionHeader";
 
 import {
   TitleDecoratorImgColor,
   TitleDecoratorImgSize,
-} from "../../comon/components/TitleDecorator";
+} from "../../common/components/TitleDecorator";
 
 const SERVICE_ID = process.env.REACT_APP_SERVICE_ID as string;
 const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID as string;

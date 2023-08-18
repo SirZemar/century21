@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { HeroHouse } from "../../images";
+import { image2Size1400 } from "../../images/apartment";
 import { heightNoNavbar } from "../../utils.styles";
 import { device } from "../../devices";
 
@@ -54,14 +54,24 @@ const kf = keyframes`
 `;
 
 export const HeroImage = styled.div`
-  background-image: url("${HeroHouse}");
   filter: grayscale(100%) brightness(20%);
-  background-position: center;
   display: block;
-  background-size: cover;
   width: 100%;
   height: 100vh;
   animation: ${kf} 1s linear forwards;
+  img {
+    &.loaded {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1/ 1;
+      object-fit: cover;
+      object-position: 50% 50%;
+    }
+
+    &.loading {
+      display: none;
+    }
+  }
 `;
 
 export const Overview = styled.div`
@@ -72,6 +82,7 @@ export const Overview = styled.div`
   width: 100%;
   min-height: ${heightNoNavbar("80vh")};
   color: var(--light);
+  padding: 40px 0;
 
   .overview {
     &__text {

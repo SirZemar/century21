@@ -8,7 +8,6 @@ export const LocationContainer = styled.div`
     display: flex;
     flex-direction: column;
     height: ${heightNoNavbar("80vh")};
-
     @media ${device.tablet} {
       flex-direction: row;
     }
@@ -23,6 +22,7 @@ export const LocationContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 40px 20px;
 
     @media ${device.tablet} {
       width: 80%;
@@ -38,13 +38,17 @@ export const LocationContainer = styled.div`
     &__list {
       &__item {
         font-size: 1.4rem;
-        white-space: nowrap;
         @media ${device.tablet} {
           font-size: 1.2rem;
           white-space: normal;
         }
         @media ${device.laptop} {
           font-size: 1rem;
+        }
+
+        &__value {
+          padding: 0;
+          padding-left: 20px;
         }
       }
     }
