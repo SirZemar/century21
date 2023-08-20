@@ -20,12 +20,12 @@ export const NavbarContainer = styled.div`
 export const Nav = styled.ul`
   display: none;
   padding: 0 40px;
+  width: 100%;
   @media ${device.tablet} {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
     height: 100%;
-    flex-grow: 1;
   }
 `;
 
@@ -39,6 +39,7 @@ export const NavItem = styled.li`
 `;
 
 export const Menu = styled.div`
+  display: flex;
   z-index: 100;
   width: 100vw;
   @media ${device.tablet} {
@@ -48,12 +49,15 @@ export const Menu = styled.div`
 
 export const MenuNav = styled(motion.ul)`
   background-color: var(--primary);
+  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  width: 100vw;
   z-index: 100;
+  top: calc(var(--navbarHeight) - 5px);
 `;
 
 export const MenuNavItem = styled.li`

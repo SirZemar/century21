@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   NavbarContainer,
   Nav,
@@ -7,46 +7,48 @@ import {
   MenuNav,
   MenuNavItem,
 } from "./Navbar.styles";
-import { NavLink, useNavigate } from "react-router-dom";
 import { Divide as Hamburger } from "hamburger-react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Wrapper } from "../../pages/Project/Project.styles";
 import Logo from "../Logo";
-import { translate } from "../../translate";
+import { sizes } from "../../devices";
+
+import { useTranslate } from "../../hooks/translate";
+import LanguageSelector from "../LanguageSelector";
 
 const Navbar: React.FC = () => {
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
+  const translate = useTranslate();
   const handleMunuNavItemClick = () => {
-    setOpen(false);
+    if (isOpen) {
+      setIsOpen(false);
+    }
   };
+
+  //TODO WINDOW RESIZE WILL BE REFACTOR TO CUSTOM HOOK
+  const [screenWidth, setScreenWidth] = useState(0);
+  const handleWindowResize = () => {
+    const width = window.innerWidth;
+    setScreenWidth(width);
+  };
+
+  useEffect(() => {
+    handleWindowResize();
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => handleWindowResize());
+    return window.removeEventListener("resize", () => handleWindowResize());
+  }, [screenWidth]);
 
   return (
     <NavbarContainer>
-      <Logo className="nav-item" />
-      <Nav>
-        {/* <NavItem>
-          <NavLink to={"/"}>Home</NavLink>
-          </NavItem>
-          <NavItem>
-          <NavLink to={"/projects"}>Projects</NavLink>
-        </NavItem> */}
-        <NavItem>
-          <a href="/#overview">{translate.NAVIGATION.OVERVIEW}</a>
-        </NavItem>
-        <NavItem>
-          <a href="/#apartments"> {translate.NAVIGATION.APARTMENTS}</a>
-        </NavItem>
-        <NavItem>
-          <a href="/#location"> {translate.NAVIGATION.LOCATION}</a>
-        </NavItem>
-        <NavItem>
-          <a href="/#contact"> {translate.NAVIGATION.CONTACT}</a>
-        </NavItem>
-      </Nav>
       <Menu>
-        <Hamburger toggled={isOpen} toggle={setOpen} color="var(--secondary)" />
-        <Logo short={true} />
+        <Hamburger
+          toggled={isOpen}
+          toggle={setIsOpen}
+          color="var(--secondary)"
+        />
         <AnimatePresence>
           {isOpen && (
             <MenuNav
@@ -55,16 +57,6 @@ const Navbar: React.FC = () => {
               animate={{ translateX: "0%", transition: { duration: 0.2 } }}
               exit={{ translateX: "-100%", transition: { duration: 0.2 } }}
             >
-              {/* <MenuNavItem> 
-              <NavLink to={"/"} onClick={() => setOpen(false)}>
-                  Home
-                </NavLink>
-              </MenuNavItem>
-              <MenuNavItem>
-                <NavLink to={"/projects"} onClick={() => setOpen(false)}>
-                  Project
-                </NavLink> 
-              </MenuNavItem> */}
               <MenuNavItem>
                 <a onClick={handleMunuNavItemClick} href="/#overview">
                   {translate.NAVIGATION.OVERVIEW}
@@ -89,6 +81,25 @@ const Navbar: React.FC = () => {
           )}
         </AnimatePresence>
       </Menu>
+      <Logo
+        short={screenWidth > sizes.tablet ? false : true}
+        closeMenu={handleMunuNavItemClick}
+      />
+      <LanguageSelector />
+      <Nav>
+        <NavItem>
+          <a href="/#overview">{translate.NAVIGATION.OVERVIEW}</a>
+        </NavItem>
+        <NavItem>
+          <a href="/#apartments"> {translate.NAVIGATION.APARTMENTS}</a>
+        </NavItem>
+        <NavItem>
+          <a href="/#location"> {translate.NAVIGATION.LOCATION}</a>
+        </NavItem>
+        <NavItem>
+          <a href="/#contact"> {translate.NAVIGATION.CONTACT}</a>
+        </NavItem>
+      </Nav>
     </NavbarContainer>
   );
 };

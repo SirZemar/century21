@@ -6,14 +6,18 @@ import { useNavigate } from "react-router-dom";
 interface Props {
   short?: boolean;
   className?: string;
+  closeMenu?: () => void;
 }
 
-const Logo: React.FC<Props> = ({ short = false, className }) => {
+const Logo: React.FC<Props> = ({ short = false, className, closeMenu }) => {
   const navigate = useNavigate();
 
   const logoHandleClick = () => {
     navigate("/");
     window.scrollTo({ top: 0 });
+    if (closeMenu) {
+      closeMenu();
+    }
   };
   return (
     <LogoContainer className={short ? `short ${className}` : `${className}`}>

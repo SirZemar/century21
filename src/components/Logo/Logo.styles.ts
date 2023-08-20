@@ -4,28 +4,16 @@ import { device } from "../../devices";
 export const LogoContainer = styled.div`
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 70%;
   height: 100%;
   user-select: none;
-
+  white-space: nowrap;
   h2 {
     font-family: initial;
   }
 
   &.short {
-    position: absolute;
-    padding-right: 5px;
-    margin-left: 50px;
     justify-content: flex-end;
-    top: 0;
-    width: calc(100% - 50px);
-    z-index: 2000;
-  }
-
-  &.nav-item {
-    display: none;
-    @media ${device.tablet} {
-      display: flex;
-    }
+    order: 3;
   }
 `;
