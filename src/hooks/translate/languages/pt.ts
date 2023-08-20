@@ -1,4 +1,6 @@
-export const translate = {
+import { Language } from "../translate.types";
+
+const PT: Language = {
   NAVIGATION: {
     OVERVIEW: "Vista Geral",
     APARTMENTS: "Apartamentos",
@@ -65,3 +67,5 @@ export const translate = {
     },
   },
 };
+
+export default PT;

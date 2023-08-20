@@ -22,13 +22,15 @@ import Slideshow from "../../components/Slideshow";
 import ContactForm from "../../components/ContactForm";
 import Location from "../../components/Location";
 import { Button } from "semantic-ui-react";
-import { translate } from "../../translate";
 import SectionHeader from "../../common/components/SectionHeader";
 import Footer from "../../components/Footer";
 import { device } from "../../devices";
+import { useTranslate } from "../../hooks/translate";
+
 const Project: React.FC = () => {
   const { projectId } = useParams();
   const navigate = useNavigate();
+  const translate = useTranslate();
 
   const [loaded, setLoaded] = useState(false);
 

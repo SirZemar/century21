@@ -8,7 +8,6 @@ import {
   formEmailRegex as emailRegex,
 } from "../../utils";
 
-import { translate } from "../../translate";
 import { useParams } from "react-router-dom";
 import SectionHeader from "../../common/components/SectionHeader";
 
@@ -16,6 +15,7 @@ import {
   TitleDecoratorImgColor,
   TitleDecoratorImgSize,
 } from "../../common/components/TitleDecorator";
+import { useTranslate } from "../../hooks/translate";
 
 const SERVICE_ID = process.env.REACT_APP_SERVICE_ID as string;
 const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID as string;
@@ -23,6 +23,7 @@ const USER_ID = process.env.REACT_APP_USER_ID as string;
 
 const ContactForm: React.FC = () => {
   const { projectId } = useParams();
+  const translate = useTranslate();
 
   const formRef = React.useRef(null);
 

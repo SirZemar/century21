@@ -1,9 +1,10 @@
 import React from "react";
 import { LocationContainer } from "./Location.styles";
-import { translate } from "../../translate";
 import SectionHeader from "../../common/components/SectionHeader";
 import Map from "../Map";
+import { useTranslate } from "../../hooks/translate";
 const Location: React.FC = () => {
+  const translate = useTranslate();
   return (
     <LocationContainer>
       <div className="location__info">
