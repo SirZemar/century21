@@ -4,7 +4,6 @@ import { CenterColumn, CenterRow } from "./utils.styles";
 import "react-slideshow-image/dist/styles.css";
 import "semantic-ui-css/semantic.min.css";
 
-
 export const GlobalStyles = createGlobalStyle`
 :root {
   --primary: #252526;
@@ -37,7 +36,7 @@ export const GlobalStyles = createGlobalStyle`
 }
 body {
   margin: 0;
-  font-family:'Roboto',  -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
+  font-family:  -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif; 
   -webkit-font-smoothing: antialiased;
