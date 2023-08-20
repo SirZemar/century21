@@ -80,7 +80,11 @@ const Slideshow: React.FC = () => {
               height: "100%",
             }}
           >
-            <img src={image} className="slideshow__slide-image" />
+            <img
+              draggable={false}
+              src={image}
+              className="slideshow__slide-image"
+            />
           </div>
         ))}
       </Slide>

@@ -11,6 +11,7 @@ export const SlideshowContainer = styled.div`
       max-width: 100%;
       user-select: none;
       object-fit: contain;
+      cursor: grab;
     }
 
     .images-wrap,
