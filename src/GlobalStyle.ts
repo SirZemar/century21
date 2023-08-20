@@ -43,7 +43,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--light);
   -webkit-tap-highlight-color: transparent;
-
+  min-width: 100vw;
 }
 h1, h2, h3, h4, p, ul, li {
   margin: 0;
@@ -56,7 +56,6 @@ p {
 h1, h2, header {
   font-family: 'Fjalla One', sans-serif;
   letter-spacing: 0.7px;
-  /* font-weight: 500; */
 }
 header{
   letter-spacing: 0;
