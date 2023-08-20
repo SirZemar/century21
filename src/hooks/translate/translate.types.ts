@@ -62,6 +62,26 @@ export interface Language {
       ERROR: string;
     };
   };
+  FOOTER: {
+    CONTACT: {
+      TITLE: string;
+    };
+    LOCATION: {
+      TITLE: string;
+      ADDRESS: string;
+    };
+    SCHEDULE: {
+      TITLE: string;
+      DAYS: {
+        PART1: string;
+        PART2: string;
+      };
+      TIME: {
+        PART1: string;
+        PART2: string;
+      };
+    };
+  };
 }
 
 export type Translate = {

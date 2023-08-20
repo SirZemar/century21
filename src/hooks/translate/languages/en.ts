@@ -66,6 +66,26 @@ const EN: Language = {
       ERROR: "Oops, couldn't send your email",
     },
   },
+  FOOTER: {
+    CONTACT: {
+      TITLE: "Contact",
+    },
+    LOCATION: {
+      TITLE: "Location",
+      ADDRESS: "Praça Gomes Teixeira n˚25",
+    },
+    SCHEDULE: {
+      TITLE: "Schedule",
+      DAYS: {
+        PART1: "From Monday to Friday",
+        PART2: "Saturday",
+      },
+      TIME: {
+        PART1: "09:30 am - 1:00 pm / 2:30 pm - 7:00 pm",
+        PART2: "10:00 am - 12:30 pm",
+      },
+    },
+  },
 };
 
 export default EN;

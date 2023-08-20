@@ -66,6 +66,26 @@ const PT: Language = {
       ERROR: "Ups, não foi possível enviar o seu email",
     },
   },
+  FOOTER: {
+    CONTACT: {
+      TITLE: "Contacto",
+    },
+    LOCATION: {
+      TITLE: "Localização",
+      ADDRESS: "Praça Gomes Teixeira n˚25",
+    },
+    SCHEDULE: {
+      TITLE: "Horário",
+      DAYS: {
+        PART1: "De 2˚ a 6˚",
+        PART2: "Sábado",
+      },
+      TIME: {
+        PART1: "09:30h - 13:00h / 14:30h - 19:00h",
+        PART2: "10:00h - 12:30h",
+      },
+    },
+  },
 };
 
 export default PT;
