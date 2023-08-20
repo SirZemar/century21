@@ -11,11 +11,23 @@ export const LanguageSelectorContainer = styled.ul`
     cursor: pointer;
 
     &__language {
-      padding: 5px;
       display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+      aspect-ratio: 1/1;
+      min-width: 30px;
+    }
+
+    &__language.selected {
+      background-color: var(--secondary);
+      border-radius: 50%;
+      color: var(--primary);
     }
 
     &__division {
+      margin: 2px;
+      text-align: center;
     }
   }
 `;

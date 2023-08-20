@@ -4,7 +4,7 @@ import languageContext from "../../languageContext";
 
 const LanguageSelector: React.FC = () => {
   const languagesAvailable = ["PT", "EN"];
-  const { setLanguage } = useContext(languageContext);
+  const { language, setLanguage } = useContext(languageContext);
 
   const handleLanguageSelectorClick = (
     e: React.MouseEvent<HTMLSpanElement>
@@ -20,7 +20,11 @@ const LanguageSelector: React.FC = () => {
           <li key={`${index}-${lan}`} className="language-selector__item">
             <span
               onClick={handleLanguageSelectorClick}
-              className="language-selector__item__language"
+              className={
+                language === lan
+                  ? "language-selector__item__language selected"
+                  : "language-selector__item__language"
+              }
             >
               {lan}
             </span>
