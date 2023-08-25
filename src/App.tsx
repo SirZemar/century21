@@ -2,7 +2,7 @@ import React, { useState, useMemo } from "react";
 import { GlobalStyles } from "./GlobalStyle";
 import { Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import languageContext from "./languageContext";
+import { LanguageProvider } from "./languageContext";
 
 const App: React.FC = () => {
   const [language, setLanguage] = useState("PT");
@@ -12,10 +12,10 @@ const App: React.FC = () => {
   return (
     <>
       <GlobalStyles />
-      <languageContext.Provider value={valueMemo}>
+      <LanguageProvider>
         <Navbar />
         <Outlet />
-      </languageContext.Provider>
+      </LanguageProvider>
     </>
   );
 };
