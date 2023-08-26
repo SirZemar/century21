@@ -57,6 +57,7 @@ const PT: Language = {
         LABEL: "Mensagem",
         PLACEHOLDER: "Mensagem...",
       },
+      ERROR: "Erro",
       BUTTONS: {
         SUBMIT: "Enviar",
       },

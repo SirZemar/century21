@@ -1,6 +1,13 @@
 import React, { FormEvent, useState } from "react";
 import { ContactFormContainer } from "./ContactForm.styles";
-import { Form, Input, TextArea, Button, Message } from "semantic-ui-react";
+import {
+  Form,
+  Input,
+  TextArea,
+  Button,
+  Message,
+  Select,
+} from "semantic-ui-react";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 import {
@@ -16,6 +23,10 @@ import {
   TitleDecoratorImgSize,
 } from "../../common/components/TitleDecorator";
 import { useTranslate } from "../../hooks/translate";
+import {
+  getPhoneCodeByCountryCode,
+  countriesData,
+} from "../../services/CountriesData";
 
 const SERVICE_ID = process.env.REACT_APP_SERVICE_ID as string;
 const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID as string;
@@ -68,7 +79,7 @@ const ContactForm: React.FC = () => {
       (result) => {
         setEmail("");
         setName("");
-        setPhone("+351 ");
+        setPhone("");
         setMessage("");
         Swal.fire({
           icon: "success",
@@ -113,7 +124,13 @@ const ContactForm: React.FC = () => {
       >
         {translate.CONTACT.HEADER}
       </SectionHeader>
-      <Form error noValidate ref={formRef} onSubmit={handleOnSubmit}>
+      <Form
+        unstackable
+        error
+        noValidate
+        ref={formRef}
+        onSubmit={handleOnSubmit}
+      >
         <Form.Field
           id="form-input-control-email"
           control={Input}
@@ -146,31 +163,64 @@ const ContactForm: React.FC = () => {
             }
           }}
         />
-        <Form.Field
-          id="form-input-control-phone"
-          control={Input}
-          autoComplete="off"
-          label={translate.CONTACT.FORM.PHONE.LABEL}
-          name="user_phone"
-          placeholder={translate.CONTACT.FORM.PHONE.PLACEHOLDER}
-          value={phone}
-          icon="phone"
-          iconPosition="left"
-          error={
-            phoneValid
-              ? null
-              : {
-                  content: translate.CONTACT.FORM.PHONE.INVALID,
-                }
-          }
-          onBlur={(e: React.FormEvent<HTMLInputElement>) =>
-            setPhoneValid(regexValidate(e))
-          }
-          onChange={(e: React.FormEvent<HTMLInputElement>) => {
-            setPhone(e.currentTarget.value);
-            if (!phoneValid) setPhoneValid(regexValidate(e));
-          }}
-        />
+        <Form.Group id="form-input-control-phone">
+          <Form.Field
+            label={translate.CONTACT.FORM.PHONE.LABEL}
+            id="form-input-control-phone-country-code"
+            control={Select}
+            width={4}
+            fluid
+            options={countriesData()}
+            defaultValue={"pt"}
+            search
+            icon={false}
+            onKeyUp={(e: React.FormEvent<HTMLElement>) => {
+              const elementText =
+                document.querySelector("#form-input-control-phone .text")
+                  ?.textContent ?? "";
+              const countryPhoneCode =
+                getPhoneCodeByCountryCode(elementText)?.code;
+              if (countryPhoneCode) {
+                setPhone("+" + countryPhoneCode + " ");
+              }
+            }}
+            onChange={(e: React.FormEvent<HTMLElement>) => {
+              if (e.currentTarget) {
+                const phoneCodeAttr =
+                  e.currentTarget.getAttribute("phonecode") ?? "";
+                setPhone(phoneCodeAttr + " ");
+              }
+            }}
+          />
+          <Form.Field
+            className="hidden-label"
+            id="form-input-control-phone-number"
+            control={Input}
+            fluid
+            autoComplete="off"
+            width={12}
+            label={translate.CONTACT.FORM.PHONE.LABEL}
+            name="user_phone"
+            placeholder={translate.CONTACT.FORM.PHONE.PLACEHOLDER}
+            value={phone}
+            icon="phone"
+            iconPosition="left"
+            error={
+              phoneValid
+                ? null
+                : {
+                    content: translate.CONTACT.FORM.PHONE.INVALID,
+                  }
+            }
+            onBlur={(e: React.FormEvent<HTMLInputElement>) =>
+              setPhoneValid(regexValidate(e))
+            }
+            onChange={(e: React.FormEvent<HTMLInputElement>) => {
+              setPhone(e.currentTarget.value);
+              if (!phoneValid) setPhoneValid(regexValidate(e));
+            }}
+          />
+        </Form.Group>
         <Form.Field
           id="form-input-control-last-name"
           control={Input}
@@ -203,7 +253,7 @@ const ContactForm: React.FC = () => {
           <Message
             className="error-message"
             error
-            header="Erro"
+            header={translate.CONTACT.FORM.ERROR}
             content={errorMessage}
           />
         )}

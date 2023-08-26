@@ -19,6 +19,9 @@ export const ContactFormContainer = styled.div`
       max-width: 60%;
     }
 
+    .field.hidden-label > label {
+      visibility: hidden;
+    }
     .field > label {
       font-size: 1.2rem;
 

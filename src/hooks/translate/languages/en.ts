@@ -57,6 +57,7 @@ const EN: Language = {
         LABEL: "Message",
         PLACEHOLDER: "Message...",
       },
+      ERROR: "Error",
       BUTTONS: {
         SUBMIT: "Submit",
       },

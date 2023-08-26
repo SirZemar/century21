@@ -53,6 +53,7 @@ export interface Language {
         LABEL: string;
         PLACEHOLDER: string;
       };
+      ERROR: string;
       BUTTONS: {
         SUBMIT: string;
       };
