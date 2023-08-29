@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import { ContactFormContainer } from "./ContactForm.styles";
 import {
   Form,
@@ -168,8 +168,6 @@ const ContactForm: React.FC = () => {
             label={translate.CONTACT.FORM.PHONE.LABEL}
             id="form-input-control-phone-country-code"
             control={Select}
-            // width={4}
-            // style={{ marginBottom: "1em" }}
             fluid
             options={countriesData()}
             defaultValue={"pt"}
@@ -199,7 +197,6 @@ const ContactForm: React.FC = () => {
             control={Input}
             fluid
             autoComplete="off"
-            // width={}
             label={translate.CONTACT.FORM.PHONE.LABEL}
             name="user_phone"
             placeholder={translate.CONTACT.FORM.PHONE.PLACEHOLDER}
@@ -245,7 +242,6 @@ const ContactForm: React.FC = () => {
           name="user_message"
           placeholder={translate.CONTACT.FORM.MESSAGE.PLACEHOLDER}
           value={message}
-          required
           onChange={(e: React.FormEvent<HTMLInputElement>) => {
             setMessage(e.currentTarget.value);
           }}
@@ -258,7 +254,7 @@ const ContactForm: React.FC = () => {
             content={errorMessage}
           />
         )}
-        <Button type="submit" color="yellow">
+        <Button type="submit" id="form-submit-button">
           {translate.CONTACT.FORM.BUTTONS.SUBMIT}
         </Button>
       </Form>

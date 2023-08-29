@@ -19,6 +19,10 @@ export const ContactFormContainer = styled.div`
       max-width: 60%;
     }
 
+    #form-input-control-phone-country-code {
+      min-width: 100px;
+    }
+
     & .fields {
       margin: 0;
       padding: 0;
@@ -43,6 +47,19 @@ export const ContactFormContainer = styled.div`
 
       @media ${device.laptop} {
         font-size: 1rem;
+      }
+    }
+
+    #form-submit-button {
+      font-size: 1.1rem;
+      background-color: var(--secondary);
+      width: 100%;
+
+      @media ${device.tablet} {
+        width: auto;
+      }
+      &:hover {
+        background-color: var(--secondaryDark);
       }
     }
     .error-message {

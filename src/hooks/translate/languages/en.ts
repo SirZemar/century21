@@ -55,7 +55,8 @@ const EN: Language = {
       MESSAGE: {
         EMPTY: "Please fill in with your message",
         LABEL: "Message",
-        PLACEHOLDER: "Message...",
+        PLACEHOLDER:
+          "Ex: I am interested in your apartments and I would like to know more details. Thank you.",
       },
       ERROR: "Error",
       BUTTONS: {

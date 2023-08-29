@@ -55,7 +55,8 @@ const PT: Language = {
       MESSAGE: {
         EMPTY: "Por favor preencha com a sua mensagem",
         LABEL: "Mensagem",
-        PLACEHOLDER: "Mensagem...",
+        PLACEHOLDER:
+          "Ex: Estou interessado(a) nos seus apartamentos e gostaria de saber mais detalhes. Obrigado(a).",
       },
       ERROR: "Erro",
       BUTTONS: {
