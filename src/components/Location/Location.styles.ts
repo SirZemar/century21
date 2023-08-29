@@ -7,9 +7,10 @@ export const LocationContainer = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    height: ${heightNoNavbar("80vh")};
+
     @media ${device.tablet} {
       flex-direction: row;
+      height: ${heightNoNavbar("80vh")};
     }
   }
   .location__info {
@@ -55,7 +56,10 @@ export const LocationContainer = styled.div`
   }
   .map-container {
     display: block;
-    height: 100%;
+    height: ${heightNoNavbar("100vh")};
+    @media ${device.tablet} {
+      height: 100%;
+    }
     width: 100%;
     /* background-repeat: no-repeat;
     background-position: center;
