@@ -19,6 +19,22 @@ export const ContactFormContainer = styled.div`
       max-width: 60%;
     }
 
+    & .fields {
+      margin: 0;
+      padding: 0;
+      gap: 0.5em;
+      & .field {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    & .fields .field:not(.field:has(#form-input-control-phone-number)) {
+      margin: 0 0 1em;
+    }
+    & .field:has(#form-input-control-phone-number) {
+      flex: 1 1 auto;
+    }
+
     .field.hidden-label > label {
       visibility: hidden;
     }

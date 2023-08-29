@@ -168,7 +168,8 @@ const ContactForm: React.FC = () => {
             label={translate.CONTACT.FORM.PHONE.LABEL}
             id="form-input-control-phone-country-code"
             control={Select}
-            width={4}
+            // width={4}
+            // style={{ marginBottom: "1em" }}
             fluid
             options={countriesData()}
             defaultValue={"pt"}
@@ -198,7 +199,7 @@ const ContactForm: React.FC = () => {
             control={Input}
             fluid
             autoComplete="off"
-            width={12}
+            // width={}
             label={translate.CONTACT.FORM.PHONE.LABEL}
             name="user_phone"
             placeholder={translate.CONTACT.FORM.PHONE.PLACEHOLDER}
