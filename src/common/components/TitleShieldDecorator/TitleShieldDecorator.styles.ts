@@ -5,7 +5,7 @@ interface Props {
   size: string;
   color: string;
 }
-export const TitleDecoratorContainer = styled.div`
+export const TitleShieldDecoratorContainer = styled.div`
   display: flex;
   align-items: center;
 `;

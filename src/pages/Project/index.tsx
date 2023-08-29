@@ -26,6 +26,7 @@ import SectionHeader from "../../common/components/SectionHeader";
 import Footer from "../../components/Footer";
 import { device } from "../../devices";
 import { useTranslate } from "../../hooks/translate";
+import { TitleDecoratorImgColor } from "../../common/components/TitleShieldDecorator";
 
 const Project: React.FC = () => {
   const { projectId } = useParams();
@@ -111,7 +112,9 @@ const Project: React.FC = () => {
       >
         <Wrapper>
           <BlueprintsContainer className="center-column">
-            <SectionHeader>{translate.APARTMENTS.HEADER}</SectionHeader>
+            <SectionHeader color={TitleDecoratorImgColor.PRIMARY}>
+              {translate.APARTMENTS.HEADER}
+            </SectionHeader>
             <h2>{translate.APARTMENTS.TITLE}</h2>
             <p>{translate.APARTMENTS.DESCRIPTION}</p>
             <Button onClick={handleBlueprintsButtonClick}>

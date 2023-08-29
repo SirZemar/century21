@@ -1,6 +1,9 @@
 import React from "react";
 import { TitleLine } from "../../../images";
-import { Image, TitleDecoratorContainer } from "./TitleDecorator.styles";
+import {
+  Image,
+  TitleShieldDecoratorContainer,
+} from "./TitleShieldDecorator.styles";
 
 export enum TitleDecoratorImgSize {
   SMALL = "small",
@@ -48,7 +51,7 @@ const TitleDecorator: React.FC<Props> = ({
   }
 
   return (
-    <TitleDecoratorContainer>
+    <TitleShieldDecoratorContainer>
       <span>
         <Image src={TitleLine} size={imageSize} color={color} />
       </span>
@@ -56,7 +59,7 @@ const TitleDecorator: React.FC<Props> = ({
       <span>
         <Image src={TitleLine} size={imageSize} color={color} />
       </span>
-    </TitleDecoratorContainer>
+    </TitleShieldDecoratorContainer>
   );
 };
 

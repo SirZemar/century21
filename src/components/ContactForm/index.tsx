@@ -21,7 +21,7 @@ import SectionHeader from "../../common/components/SectionHeader";
 import {
   TitleDecoratorImgColor,
   TitleDecoratorImgSize,
-} from "../../common/components/TitleDecorator";
+} from "../../common/components/TitleShieldDecorator";
 import { useTranslate } from "../../hooks/translate";
 import {
   getPhoneCodeByCountryCode,
