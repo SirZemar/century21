@@ -1,5 +1,6 @@
 import React from "react";
 import { heightNoNavbar } from "../../utils.styles";
+import { BluePrints } from "../../documents";
 
 const Blueprints: React.FC = () => {
   return (
@@ -10,13 +11,14 @@ const Blueprints: React.FC = () => {
         width: "100vw",
       }}
     >
-      <iframe
+      <iframe src={BluePrints} width="100%" height="100%"></iframe>
+      {/* <iframe
         src="https://publuu.com/flip-book/212947/510774/page/1?embed"
         width="100%"
         height="100%"
         allow="clipboard-write"
         className="publuuflip"
-      ></iframe>
+      ></iframe> */}
     </div>
   );
 };
