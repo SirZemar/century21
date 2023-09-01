@@ -1,8 +1,8 @@
 import React from "react";
 import { heightNoNavbar } from "../../utils.styles";
-import { BluePrints } from "../../documents";
 
 const Blueprints: React.FC = () => {
+  const srcBlueprints = `https://drive.google.com/file/d/1_XjH4C4RysYmFfvkAW1cNi3Ba8uQTTAj/preview`;
   return (
     <div
       style={{
@@ -11,14 +11,7 @@ const Blueprints: React.FC = () => {
         width: "100vw",
       }}
     >
-      <iframe src={BluePrints} width="100%" height="100%"></iframe>
-      {/* <iframe
-        src="https://publuu.com/flip-book/212947/510774/page/1?embed"
-        width="100%"
-        height="100%"
-        allow="clipboard-write"
-        className="publuuflip"
-      ></iframe> */}
+      <iframe src={srcBlueprints} height="100%" width="100%"></iframe>
     </div>
   );
 };
