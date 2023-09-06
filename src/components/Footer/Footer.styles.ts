@@ -17,6 +17,7 @@ export const FooterContainer = styled.footer`
     @media ${device.laptop} {
       flex-direction: row;
       justify-content: space-evenly;
+      align-items: flex-start;
     }
     &__card {
       padding: 20px 0;
