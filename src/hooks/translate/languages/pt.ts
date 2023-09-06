@@ -27,9 +27,16 @@ const PT: Language = {
     HEADER: "Localização",
     TITLE: "Tudo o que tu precisas",
     DESCRIPTION: {
-      ITEM1: "Supermercado Pingo Doce",
+      ITEM1: "Estações de Comboio e de Metro de Campanhã",
       ITEM2: "Terminal Intermodal de Campanhã",
-      ITEM3: "Alameda das Fontaínhas",
+      ITEM3: "Baixa do Porto",
+      ITEM4: "Ponte D. Luís I",
+    },
+    DISTANCE: {
+      ITEM1: "700m",
+      ITEM2: "900m",
+      ITEM3: "2000m",
+      ITEM4: "2700m",
     },
   },
   CONTACT: {

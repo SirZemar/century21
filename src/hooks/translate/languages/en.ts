@@ -27,9 +27,16 @@ const EN: Language = {
     HEADER: "Location",
     TITLE: "Everything You Need",
     DESCRIPTION: {
-      ITEM1: "Pingo Doce Supermarket",
-      ITEM2: "Campanhã Intermodal Terminal",
-      ITEM3: "Alameda das Fontaínhas",
+      ITEM1: "Train Station and Metro of Campanhã",
+      ITEM2: "TIC - Campanhã Intermodal Terminal",
+      ITEM3: "Porto Downtown",
+      ITEM4: "D. Luís I Bridge",
+    },
+    DISTANCE: {
+      ITEM1: "700m",
+      ITEM2: "900m",
+      ITEM3: "2000m",
+      ITEM4: "2700m",
     },
   },
   CONTACT: {

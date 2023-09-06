@@ -1,4 +1,4 @@
-export interface Language {
+export type Language = {
   NAVIGATION: {
     OVERVIEW: string;
     APARTMENTS: string;
@@ -23,9 +23,10 @@ export interface Language {
     HEADER: string;
     TITLE: string;
     DESCRIPTION: {
-      ITEM1: string;
-      ITEM2: string;
-      ITEM3: string;
+      [key: ItemIndex]: string;
+    };
+    DISTANCE: {
+      [key: ItemIndex]: string;
     };
   };
   CONTACT: {
@@ -83,7 +84,9 @@ export interface Language {
       };
     };
   };
-}
+};
+
+export type ItemIndex = `ITEM${string}`;
 
 export type Translate = {
   [key: string]: Language;

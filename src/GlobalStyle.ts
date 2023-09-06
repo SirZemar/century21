@@ -13,6 +13,13 @@ export const GlobalStyles = createGlobalStyle`
   --secondaryDark: #998D6D;
   --light: #F6F6F6;
 
+  --neutralDarker: #646464;
+  --neutralDark: #787878;
+  --neutral: #8C8C8C;
+  --neutralLight: #A0A0A0;
+  --neutralLighter: #B4B4B4;
+  --neutralLightest: #F6F6F6;
+
   --navbarHeight: 50px;
 
   @media ${device.laptop} {

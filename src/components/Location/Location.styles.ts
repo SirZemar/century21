@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { heightNoNavbar } from "../../utils.styles";
 import { device } from "../../devices";
 export const LocationContainer = styled.div`
-  && {
+  & {
     height: 100%;
     width: 100%;
     display: flex;
@@ -39,17 +39,38 @@ export const LocationContainer = styled.div`
     &__list {
       &__item {
         font-size: 1.4rem;
+        padding: 20px 0;
+
         @media ${device.tablet} {
           font-size: 1.2rem;
           white-space: normal;
+          padding: 10px 0;
         }
         @media ${device.laptop} {
           font-size: 1rem;
         }
-
-        &__value {
-          padding: 0;
-          padding-left: 20px;
+        &__reference {
+          display: flex;
+          align-items: center;
+          &__icon {
+            -webkit-user-drag: none;
+            user-select: none;
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+          }
+          &__text {
+            padding: 0;
+            line-height: 1.8rem;
+            @media ${device.laptop} {
+              line-height: 1.5rem;
+            }
+            &__distance {
+              padding-left: 5px;
+              font-size: 0.9em;
+              color: var(--neutralLighter);
+            }
+          }
         }
       }
     }
@@ -61,9 +82,6 @@ export const LocationContainer = styled.div`
       height: 100%;
     }
     width: 100%;
-    /* background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; */
   }
   .map {
     width: 100%;
