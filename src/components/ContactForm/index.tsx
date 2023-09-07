@@ -55,8 +55,6 @@ const ContactForm: React.FC = () => {
         setErrorMessage(translate.CONTACT.FORM.EMAIL.EMPTY);
       } else if (!name) {
         setErrorMessage(translate.CONTACT.FORM.NAME.EMPTY);
-      } else if (!message) {
-        setErrorMessage(translate.CONTACT.FORM.MESSAGE.EMPTY);
       }
     } else {
       setFormError(false);
