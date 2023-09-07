@@ -21,6 +21,8 @@ export const Nav = styled.ul`
   display: none;
   padding: 0 40px;
   width: 100%;
+  font-size: 1.2rem;
+  transform: scale(1, 1.2);
   @media ${device.tablet} {
     display: flex;
     justify-content: flex-end;
