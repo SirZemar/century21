@@ -12,9 +12,18 @@ export const SectionHeaderContainer = styled.header`
   display: flex;
   align-items: flex-end;
   gap: 10px;
-  &&.medium-size {
+
+  &.medium-size {
+    font-size: 2rem;
     padding-bottom: 20px;
   }
+
+  &.large-size {
+    font-size: 2.6rem;
+    padding-bottom: 30px;
+  }
+  //TODO should padding be included in size class?
+  // TODO smal size missing
 `;
 
 export const TitleDecorator = styled.span<Props>`

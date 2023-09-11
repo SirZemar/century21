@@ -19,10 +19,17 @@ const SectionHeader: React.FC<Props> = ({
   size = TitleDecoratorImgSize.SMALL,
   color = TitleDecoratorImgColor.SECONDARY,
 }) => {
+
+  let sizeClass = "";
+  if (size === TitleDecoratorImgSize.SMALL) {
+    sizeClass = "small-size";
+  } else if (size === TitleDecoratorImgSize.MEDIUM) {
+    sizeClass = "medium-size";
+  } else if (size === TitleDecoratorImgSize.LARGE) {
+    sizeClass = "large-size";
+  }
   return (
-    <SectionHeaderContainer
-      className={size === TitleDecoratorImgSize.MEDIUM ? "medium-size" : ""}
-    >
+    <SectionHeaderContainer className={sizeClass}>
       <TitleDecorator
         color={color}
         style={{ borderRight: `3px solid var(--${color})` }}
