@@ -1,6 +1,12 @@
 import { createGlobalStyle } from "styled-components";
 import { device } from "./devices";
-import { CenterColumn, CenterRow } from "./utils.styles";
+import {
+  backgroundColorLight,
+  CenterColumn,
+  CenterRow,
+  backgroundColorPrimary,
+  backgroundColorSecondary,
+} from "./utils.styles";
 import "react-slideshow-image/dist/styles.css";
 import "semantic-ui-css/semantic.min.css";
 
@@ -39,6 +45,18 @@ export const GlobalStyles = createGlobalStyle`
   }
   .center-column{
     ${CenterColumn}
+  }
+
+  .background-color-primary {
+    ${backgroundColorPrimary}
+  }
+
+  .background-color-secondary{
+    ${backgroundColorSecondary}
+  }
+
+  .background-color-light{
+    ${backgroundColorLight}
   }
 }
 body {
