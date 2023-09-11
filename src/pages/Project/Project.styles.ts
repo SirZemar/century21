@@ -20,28 +20,21 @@ export const ProjectContainer = styled.div`
 export const Section = styled.section`
   width: 100vw;
 
-  &.background-color-primary {
-    background-color: var(--primary);
-  }
-
-  &.background-color-secondary {
-    background-color: var(--secondary);
-  }
-
-  &.background-color-light {
-    background-color: var(--light);
-  }
-
   &&#overview,
   &&#apartments,
   &&#location,
   &&#contact {
     scroll-margin-block-start: calc(var(--navbarHeight) - 20px);
   }
-
   @media ${device.tablet} {
     padding: 40px 0;
   }
+`;
+
+export const Container = styled.div`
+  /* @media ${device.tablet} {
+    padding: 40px 0;
+  } */
 `;
 
 export const Wrapper = styled.div`

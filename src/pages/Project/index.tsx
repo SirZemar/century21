@@ -7,6 +7,7 @@ import {
   Overview,
   Wrapper,
   BlueprintsContainer,
+  Container,
 } from "./Project.styles";
 import { useNavigate, useParams } from "react-router-dom";
 import {
@@ -27,6 +28,8 @@ import Footer from "../../components/Footer";
 import { device } from "../../devices";
 import { useTranslate } from "../../hooks/translate";
 import { TitleDecoratorImgColor } from "../../common/components/TitleShieldDecorator";
+import { ApartmentsTableContainer } from "../../components/ApartmentsTable/ApartmentsTable.styles";
+import ApartmentsTable from "../../components/ApartmentsTable";
 
 const Project: React.FC = () => {
   const { projectId } = useParams();
@@ -106,22 +109,26 @@ const Project: React.FC = () => {
           </Views>
         </Wrapper>
       </Section>
-      <Section
-        id="apartments"
-        className="background-color-secondary center-row"
-      >
-        <Wrapper>
-          <BlueprintsContainer className="center-column">
-            <SectionHeader color={TitleDecoratorImgColor.PRIMARY}>
-              {translate.APARTMENTS.HEADER}
-            </SectionHeader>
-            <h2>{translate.APARTMENTS.TITLE}</h2>
-            <p>{translate.APARTMENTS.DESCRIPTION}</p>
-            <Button onClick={handleBlueprintsButtonClick}>
-              {translate.APARTMENTS.BLUEPRINTS.BUTTON}
-            </Button>
-          </BlueprintsContainer>
-        </Wrapper>
+      <Section id="apartments">
+        <Container className="background-color-secondary center-row">
+          <Wrapper>
+            <BlueprintsContainer className="center-column">
+              <SectionHeader color={TitleDecoratorImgColor.PRIMARY}>
+                {translate.APARTMENTS.HEADER}
+              </SectionHeader>
+              <h2>{translate.APARTMENTS.TITLE}</h2>
+              <p>{translate.APARTMENTS.DESCRIPTION}</p>
+              <Button onClick={handleBlueprintsButtonClick}>
+                {translate.APARTMENTS.BLUEPRINTS.BUTTON}
+              </Button>
+            </BlueprintsContainer>
+          </Wrapper>
+        </Container>
+        <Container style={{ marginTop: "40px" }} className="center-row">
+          <Wrapper>
+            <ApartmentsTable />
+          </Wrapper>
+        </Container>
       </Section>
       <Section className="center-row">
         <Wrapper>

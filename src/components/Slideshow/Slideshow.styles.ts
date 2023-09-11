@@ -1,6 +1,13 @@
 import styled from "styled-components";
 import { heightNoNavbar } from "../../utils.styles";
 
+export const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
+
 export const SlideshowContainer = styled.div`
   .slideshow {
     max-width: 100%;

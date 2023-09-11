@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { SlideshowContainer } from "./Slideshow.styles";
+import { Container, SlideshowContainer } from "./Slideshow.styles";
 import { Slide } from "react-slideshow-image";
 import { sizes as deviceWidth } from "../../devices";
 import { slideshowImages } from "../../images/apartment";
+import SectionHeader from "../../common/components/SectionHeader";
+import {
+  TitleDecoratorImgColor,
+  TitleDecoratorImgSize,
+} from "../../common/components/TitleShieldDecorator";
 
 const Slideshow: React.FC = () => {
   const [screenWidth, setScreenWidth] = useState(0);
@@ -56,39 +61,49 @@ const Slideshow: React.FC = () => {
   }, [screenWidth]);
 
   return (
-    <SlideshowContainer
-      onMouseLeave={() => {
-        if (screenWidth > deviceWidth.laptop) setSlideSpeed(1000);
-      }}
-      onMouseEnter={() => {
-        if (screenWidth > deviceWidth.laptop) setSlideSpeed(200);
-      }}
-    >
-      <Slide
-        transitionDuration={slideSpeed}
-        indicators={true}
-        cssClass="slideshow"
-        {...arrowProperties}
-        autoplay={screenWidth > deviceWidth.laptop ? true : false}
+    <>
+      <Container className="center-row">
+        <SectionHeader
+          color={TitleDecoratorImgColor.PRIMARY}
+          size={TitleDecoratorImgSize.LARGE}
+        >
+          Galeria
+        </SectionHeader>
+      </Container>
+      <SlideshowContainer
+        onMouseLeave={() => {
+          if (screenWidth > deviceWidth.laptop) setSlideSpeed(1000);
+        }}
+        onMouseEnter={() => {
+          if (screenWidth > deviceWidth.laptop) setSlideSpeed(200);
+        }}
       >
-        {images.map((image, index) => (
-          <div
-            key={index}
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              height: "100%",
-            }}
-          >
-            <img
-              draggable={false}
-              src={image}
-              className="slideshow__slide-image"
-            />
-          </div>
-        ))}
-      </Slide>
-    </SlideshowContainer>
+        <Slide
+          transitionDuration={slideSpeed}
+          indicators={true}
+          cssClass="slideshow"
+          {...arrowProperties}
+          autoplay={screenWidth > deviceWidth.laptop ? true : false}
+        >
+          {images.map((image, index) => (
+            <div
+              key={index}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                height: "100%",
+              }}
+            >
+              <img
+                draggable={false}
+                src={image}
+                className="slideshow__slide-image"
+              />
+            </div>
+          ))}
+        </Slide>
+      </SlideshowContainer>
+    </>
   );
 };
 
