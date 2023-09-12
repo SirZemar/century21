@@ -1,11 +1,18 @@
 import styled from "styled-components";
 import { heightNoNavbar } from "../../utils.styles";
+import { device } from "../../devices";
 
 export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  padding-top: 40px;
+
+  @media ${device.tablet} {
+    padding-top: 0;
+  }
 `;
 
 export const SlideshowContainer = styled.div`

@@ -6,6 +6,10 @@ export const ContactFormContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  @media ${device.tablet} {
+    padding: 0;
+  }
   padding: 40px 0;
 
   .form {
