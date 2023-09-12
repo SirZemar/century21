@@ -22,8 +22,8 @@ export const GlobalStyles = createGlobalStyle`
   --neutralDarker: #646464;
   --neutralDark: #787878;
   --neutral: #8C8C8C;
-  --neutralLight: #A0A0A0;
-  --neutralLighter: #B4B4B4;
+  --neutralLight: #C9C9C9;
+  --neutralLighter: #E9E9E9;
   --neutralLightest: #F6F6F6;
 
   --navbarHeight: 50px;
