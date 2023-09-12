@@ -2,14 +2,14 @@ import React from "react";
 import { LocationContainer } from "./Location.styles";
 import SectionHeader from "../../common/components/SectionHeader";
 import Map from "../Map";
-import { useTranslate } from "../../hooks/translate";
+import { useTranslate } from "../../hooks/useTranslate";
 import {
   bridgeIcon,
   trainIcon,
   bullseyeIcon,
   busIcon,
 } from "../../images/icons";
-import { ItemIndex } from "../../hooks/translate/translate.types";
+import { ItemIndex } from "../../hooks/useTranslate/translate.types";
 
 type Item = {
   icon: string;
@@ -32,7 +32,7 @@ const Location: React.FC = () => {
         <ul className="location__info__list">
           {items.map((item) => {
             return (
-              <li className="location__info__list__item">
+              <li key={item.id} className="location__info__list__item">
                 <div className="location__info__list__item__reference">
                   <img
                     className="location__info__list__item__reference__icon"

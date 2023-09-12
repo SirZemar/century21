@@ -1,6 +1,6 @@
 import React from "react";
 import { FooterContainer } from "./Footer.styles";
-import { useTranslate } from "../../hooks/translate";
+import { useTranslate } from "../../hooks/useTranslate";
 
 const Footer: React.FC = () => {
   const translate = useTranslate();

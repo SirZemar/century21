@@ -26,7 +26,7 @@ import { Button } from "semantic-ui-react";
 import SectionHeader from "../../common/components/SectionHeader";
 import Footer from "../../components/Footer";
 import { device } from "../../devices";
-import { useTranslate } from "../../hooks/translate";
+import { useTranslate } from "../../hooks/useTranslate";
 import { TitleDecoratorImgColor } from "../../common/components/TitleShieldDecorator";
 import { ApartmentsTableContainer } from "../../components/ApartmentsTable/ApartmentsTable.styles";
 import ApartmentsTable from "../../components/ApartmentsTable";
@@ -124,7 +124,7 @@ const Project: React.FC = () => {
             </BlueprintsContainer>
           </Wrapper>
         </Container>
-        <Container style={{ marginTop: "40px" }} className="center-row">
+        <Container className="center-row">
           <Wrapper>
             <ApartmentsTable />
           </Wrapper>

@@ -12,7 +12,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Logo from "../Logo";
 import { sizes } from "../../devices";
 
-import { useTranslate } from "../../hooks/translate";
+import { useTranslate } from "../../hooks/useTranslate";
 import LanguageSelector from "../LanguageSelector";
 
 const Navbar: React.FC = () => {

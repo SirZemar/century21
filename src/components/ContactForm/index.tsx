@@ -22,7 +22,7 @@ import {
   TitleDecoratorImgColor,
   TitleDecoratorImgSize,
 } from "../../common/components/TitleShieldDecorator";
-import { useTranslate } from "../../hooks/translate";
+import { useTranslate } from "../../hooks/useTranslate";
 import {
   getPhoneCodeByCountryCode,
   countriesData,
