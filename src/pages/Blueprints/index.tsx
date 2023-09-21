@@ -1,8 +1,13 @@
 import React from "react";
 import { heightNoNavbar } from "../../utils.styles";
+import { useParams } from "react-router-dom";
 
 const Blueprints: React.FC = () => {
-  const srcBlueprints = `https://drive.google.com/file/d/1_XjH4C4RysYmFfvkAW1cNi3Ba8uQTTAj/preview`;
+
+  const { blueprintId } = useParams();
+
+  const BASE_URL = `https://drive.google.com/file/d/${blueprintId}`;
+  const srcBlueprints = BASE_URL + `/preview`;
   return (
     <div
       style={{

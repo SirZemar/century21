@@ -39,7 +39,7 @@ const Project: React.FC = () => {
   const [loaded, setLoaded] = useState(false);
 
   const handleBlueprintsButtonClick = () => {
-    navigate("blueprints");
+    navigate("blueprints/1WrUrXxMADhXkjjWhhY_fHRlM8A7XHg3S");
   };
 
   return (
@@ -125,9 +125,7 @@ const Project: React.FC = () => {
           </Wrapper>
         </Container>
         <Container className="center-row">
-          <Wrapper>
-            <ApartmentsTable />
-          </Wrapper>
+          <ApartmentsTable />
         </Container>
       </Section>
       <Section className="center-row">

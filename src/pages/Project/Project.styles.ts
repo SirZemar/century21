@@ -31,11 +31,7 @@ export const Section = styled.section`
   }
 `;
 
-export const Container = styled.div`
-  /* @media ${device.tablet} {
-    padding: 40px 0;
-  } */
-`;
+export const Container = styled.div``;
 
 export const Wrapper = styled.div`
   max-width: 800px;
@@ -168,8 +164,4 @@ export const Views = styled.div`
 export const BlueprintsContainer = styled.div`
   padding: 40px 0px;
   text-align: center;
-
-  @media ${device.laptop} {
-    padding: 0px;
-  }
 `;

@@ -32,7 +32,7 @@ const router = createBrowserRouter([
         element: <Blueprints />,
       },
       {
-        path: "blueprints",
+        path: "blueprints/:blueprintId",
         element: <Blueprints />,
       },
     ],
