@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   HeroImage,
   ProjectContainer,
@@ -37,6 +37,11 @@ const Project: React.FC = () => {
   const translate = useTranslate();
 
   const [loaded, setLoaded] = useState(false);
+
+  const [
+    contactFormFractionDefaultMessage,
+    setContactFormFractionDefaultMessage,
+  ] = useState("");
 
   const handleBlueprintsButtonClick = () => {
     navigate("blueprints/1WrUrXxMADhXkjjWhhY_fHRlM8A7XHg3S");
@@ -125,7 +130,9 @@ const Project: React.FC = () => {
           </Wrapper>
         </Container>
         <Container className="center-row">
-          <ApartmentsTable />
+          <ApartmentsTable
+            setFormMessage={setContactFormFractionDefaultMessage}
+          />
         </Container>
       </Section>
       <Section className="center-row">
@@ -138,7 +145,9 @@ const Project: React.FC = () => {
       </Section>
       <Section id="contact" className="center-row">
         <Wrapper>
-          <ContactForm />
+          <ContactForm
+            fractionDefaultMessage={contactFormFractionDefaultMessage}
+          />
         </Wrapper>
       </Section>
       <Section

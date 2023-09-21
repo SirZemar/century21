@@ -34,6 +34,7 @@ export const ApartmentsTableContainer = styled.div`
   .blueprint-button {
     box-shadow: 0 0 2px var(--neutral) !important;
     white-space: nowrap;
+    width: 100%;
   }
 
   .mobile-fraction-table {

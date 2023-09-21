@@ -29,8 +29,8 @@ export const apartmentsData: Apartment[] = [
     areaExterior: "12.00m²",
     areaGarage: "34.70m²",
     areaStorage: "7.50m²",
-    priceSale: "795 000 €",
-    pricePreSale: "715 500 €",
+    priceSale: "-", //795 000 €
+    pricePreSale: "-", //715 500 €
     blueprintId: "1WjOLjZltug9izZjpv1J33TgGA06-Miwy",
   },
   {
@@ -40,7 +40,7 @@ export const apartmentsData: Apartment[] = [
     topology: "T3 DUPLEX",
     areaRaw: "156.60m²",
     areaExterior: "34.00m²",
-    priceSale: "",
+    priceSale: "-",
     pricePreSale: "RESERVADO",
     areaStorage: "30.90m²",
     areaGarage: "7.40m²",
@@ -53,15 +53,15 @@ export const apartmentsData: Apartment[] = [
     topology: "T3 DUPLEX",
     areaRaw: "156.60m²",
     areaExterior: "34.00m²",
-    priceSale: "1 150 000 €",
-    pricePreSale: "1 035 000 €",
+    priceSale: "-", //1 150 000 €
+    pricePreSale: "-", //1 035 000 €
     areaStorage: "31.00m²",
     areaGarage: "7.40m²",
     blueprintId: "1VVB2ahH_00opBcIMkdoIHayeB8YLY4Y9",
   },
   {
     fraction: "D",
-    nature: "B",
+    nature: "TOWNHOUSE",
     floor: "2",
     topology: "T3 DUPLEX",
     areaRaw: "156.60m²",
@@ -79,8 +79,8 @@ export const apartmentsData: Apartment[] = [
     topology: "T3 DUPLEX",
     areaRaw: "156.60m²",
     areaExterior: "34.00m²",
-    priceSale: "1 150 000 €",
-    pricePreSale: "1 035 000 €",
+    priceSale: "-", //1 150 000 €
+    pricePreSale: "-", //1 035 000 €
     areaStorage: "25.48m²",
     areaGarage: "7.40m²",
     blueprintId: "193vOTSTLz4M7oMj_g38kSlT6qulzZOUs",
@@ -92,21 +92,21 @@ export const apartmentsData: Apartment[] = [
     topology: "T3 DUPLEX",
     areaRaw: "156.20m²",
     areaExterior: "34.00m²",
-    priceSale: "1 150 000 €",
-    pricePreSale: "1 035 000 €",
+    priceSale: "-", //1 150 000 €
+    pricePreSale: "-", //1 035 000 €
     areaStorage: "25.48m²",
     areaGarage: "7.40m²",
     blueprintId: "14vrhhG23dScbjgQwAOhmKZsP7XDx8AZJ",
   },
   {
     fraction: "G",
-    nature: "B",
+    nature: "TOWNHOUSE",
     floor: "2",
     topology: "T2 DUPLEX",
     areaRaw: "126.00m²",
     areaExterior: "25.00m²",
-    priceSale: "935 000 €",
-    pricePreSale: "841 500 €",
+    priceSale: "-", //935 000 €
+    pricePreSale: "-", //841 500 €
     areaStorage: "13.32m²",
     areaGarage: "7.50m²",
     blueprintId: "19puKKbcc8bBkIyDRTD3mBatJGaDqDEHR",
@@ -118,8 +118,8 @@ export const apartmentsData: Apartment[] = [
     topology: "T2 DUPLEX",
     areaRaw: "103.80m²",
     areaExterior: "10.00m²",
-    priceSale: "750 000 €",
-    pricePreSale: "675 000 €",
+    priceSale: "-", //750 000 €
+    pricePreSale: "-", //675 000 €
     areaStorage: "26.30m²",
     areaGarage: "5.00m²",
     blueprintId: "1tuNPUjBXF0fTSgEKx-IX1Amc57soXJHQ",
@@ -144,8 +144,8 @@ export const apartmentsData: Apartment[] = [
     topology: "T2 DUPLEX",
     areaRaw: "100.00m²",
     areaExterior: "10.00m²",
-    priceSale: "750 000 €",
-    pricePreSale: "675 000 €",
+    priceSale: "-", //750 000 €
+    pricePreSale: "-", //675 000 €
     areaStorage: "26.30m²",
     areaGarage: "5.00m²",
     blueprintId: "1EQWnYfpZzG1qFtVqjPjk17-a3lfyNZgn",
@@ -157,7 +157,7 @@ export const apartmentsData: Apartment[] = [
     topology: "T2 DUPLEX",
     areaRaw: "103.80m²",
     areaExterior: "10.00m²",
-    priceSale: "",
+    priceSale: "-",
     pricePreSale: "RESERVADO",
     areaStorage: "26.30m²",
     areaGarage: "5.00m²",
@@ -167,11 +167,11 @@ export const apartmentsData: Apartment[] = [
     fraction: "L",
     nature: "APARTAMENTO",
     floor: "4",
-    topology: "T2 DUPLEX",
+    topology: "T2",
     areaRaw: "91.20m²",
     areaExterior: "16.00m²",
-    priceSale: "675 000 €",
-    pricePreSale: "607 500 €",
+    priceSale: "-", //675 000 €
+    pricePreSale: "-", //607 500 €
     areaStorage: "18.80",
     areaGarage: "5.00m²",
     blueprintId: "1fpIKJI_3Xks4WG8QhMwryYI1z8alWMSA",
@@ -180,7 +180,7 @@ export const apartmentsData: Apartment[] = [
     fraction: "M",
     nature: "APARTAMENTO",
     floor: "4",
-    topology: "T2 DUPLEX",
+    topology: "T2",
     areaRaw: "91.20m²",
     areaExterior: "16.00m²",
     priceSale: "675 000 €",

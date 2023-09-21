@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Grid, Table } from "semantic-ui-react";
+import { Button, Table } from "semantic-ui-react";
 import { apartmentsData } from "./ApartmentsTable.data";
 import { ApartmentsTableContainer } from "./ApartmentsTable.styles";
 import useWindowResize from "../../hooks/useWindowResize";
@@ -7,14 +7,18 @@ import { sizes } from "../../devices";
 import { useTranslate } from "../../hooks/useTranslate";
 import { useNavigate } from "react-router-dom";
 
-const ApartmentsTable: React.FC = () => {
+type Props = {
+  setFormMessage: React.Dispatch<React.SetStateAction<string>>;
+};
+
+const ApartmentsTable: React.FC<Props> = ({ setFormMessage }) => {
   const screenWidth = useWindowResize();
   const translate = useTranslate();
   const navigate = useNavigate();
 
   const [isSmallScreen, setIsMobile] = useState(false);
 
-  const tableLabels = {
+  const headerLabels = {
     fraction: "Fração",
     nature: "Natureza",
     topology: "Tipologia",
@@ -38,23 +42,29 @@ const ApartmentsTable: React.FC = () => {
   const handleBlueprintsButtonClick = (blueprint: string) => {
     navigate(`blueprints/${blueprint}`);
   };
+
+  const handleReservationButtonClick = (fraction: string) => {
+    setFormMessage(
+      `Hello, I want to know more information about fraction ${fraction}`
+    );
+  };
   return (
     <ApartmentsTableContainer>
       {!isSmallScreen && (
         <Table>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell>{tableLabels.fraction}</Table.HeaderCell>
-              <Table.HeaderCell>{tableLabels.nature}</Table.HeaderCell>
-              <Table.HeaderCell>{tableLabels.topology}</Table.HeaderCell>
-              <Table.HeaderCell>{tableLabels.floor}</Table.HeaderCell>
-              <Table.HeaderCell>{tableLabels.areRaw}</Table.HeaderCell>
-              <Table.HeaderCell>{tableLabels.areaExterior}</Table.HeaderCell>
-              <Table.HeaderCell>{tableLabels.areaGarage}</Table.HeaderCell>
-              <Table.HeaderCell>{tableLabels.areaStorage}</Table.HeaderCell>
-              <Table.HeaderCell>{tableLabels.priceSale}</Table.HeaderCell>
-              <Table.HeaderCell>{tableLabels.pricePreSale}</Table.HeaderCell>
-              <Table.HeaderCell>{tableLabels.info}</Table.HeaderCell>
+              <Table.HeaderCell>{headerLabels.fraction}</Table.HeaderCell>
+              <Table.HeaderCell>{headerLabels.nature}</Table.HeaderCell>
+              <Table.HeaderCell>{headerLabels.topology}</Table.HeaderCell>
+              <Table.HeaderCell>{headerLabels.floor}</Table.HeaderCell>
+              <Table.HeaderCell>{headerLabels.areRaw}</Table.HeaderCell>
+              <Table.HeaderCell>{headerLabels.areaExterior}</Table.HeaderCell>
+              <Table.HeaderCell>{headerLabels.areaGarage}</Table.HeaderCell>
+              <Table.HeaderCell>{headerLabels.areaStorage}</Table.HeaderCell>
+              <Table.HeaderCell>{headerLabels.priceSale}</Table.HeaderCell>
+              <Table.HeaderCell>{headerLabels.pricePreSale}</Table.HeaderCell>
+              <Table.HeaderCell>{headerLabels.info}</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
           <Table.Body>
@@ -94,7 +104,16 @@ const ApartmentsTable: React.FC = () => {
                     >
                       Planta
                     </Button>
-                    <Button className="blueprint-button">Contactar</Button>
+                    <a style={{ color: "rgba(0,0,0,.6)" }} href="#contact">
+                      <Button
+                        onClick={() =>
+                          handleReservationButtonClick(apartment.fraction)
+                        }
+                        className="blueprint-button"
+                      >
+                        Contactar
+                      </Button>
+                    </a>
                   </Table.Cell>
                 </Table.Row>
               );
@@ -118,34 +137,34 @@ const ApartmentsTable: React.FC = () => {
                 >
                   <Table.Cell>
                     <p className="mobile-fraction-table">
-                      {tableLabels.fraction}: {apartment.fraction}
+                      {headerLabels.fraction}: {apartment.fraction}
                     </p>
                     <p className="mobile-fraction-table">
-                      {tableLabels.nature}: {apartment.nature}
+                      {headerLabels.nature}: {apartment.nature}
                     </p>
                     <p className="mobile-fraction-table">
-                      {tableLabels.topology}: {apartment.topology}
+                      {headerLabels.topology}: {apartment.topology}
                     </p>
                     <p className="mobile-fraction-table">
-                      {tableLabels.floor}: {apartment.floor}
+                      {headerLabels.floor}: {apartment.floor}
                     </p>
                     <p className="mobile-fraction-table">
-                      {tableLabels.areRaw}: {apartment.areaRaw}
+                      {headerLabels.areRaw}: {apartment.areaRaw}
                     </p>
                     <p className="mobile-fraction-table">
-                      {tableLabels.areaExterior}: {apartment.areaExterior}
+                      {headerLabels.areaExterior}: {apartment.areaExterior}
                     </p>
                     <p className="mobile-fraction-table">
-                      {tableLabels.areaExterior}: {apartment.areaGarage}
+                      {headerLabels.areaExterior}: {apartment.areaGarage}
                     </p>
                     <p className="mobile-fraction-table">
-                      {tableLabels.areaExterior}: {apartment.areaStorage}
+                      {headerLabels.areaExterior}: {apartment.areaStorage}
                     </p>
                     <p className="mobile-fraction-table">
-                      {tableLabels.pricePreSale}: {apartment.priceSale}
+                      {headerLabels.pricePreSale}: {apartment.priceSale}
                     </p>
                     <p className="mobile-fraction-table">
-                      {tableLabels.pricePreSale}: {apartment.pricePreSale}
+                      {headerLabels.pricePreSale}: {apartment.pricePreSale}
                     </p>
                   </Table.Cell>
                   <Table.Cell
@@ -165,7 +184,16 @@ const ApartmentsTable: React.FC = () => {
                     >
                       Planta
                     </Button>
-                    <Button className="blueprint-button">Contactar</Button>
+                    <a style={{ color: "rgba(0,0,0,.6)" }} href="#contact">
+                      <Button
+                        onClick={() =>
+                          handleReservationButtonClick(apartment.fraction)
+                        }
+                        className="blueprint-button"
+                      >
+                        Contactar
+                      </Button>
+                    </a>
                   </Table.Cell>
                 </Table.Row>
               </Table.Body>

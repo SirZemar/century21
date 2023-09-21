@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import { ContactFormContainer } from "./ContactForm.styles";
 import {
   Form,
@@ -32,7 +32,10 @@ const SERVICE_ID = process.env.REACT_APP_SERVICE_ID as string;
 const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID as string;
 const USER_ID = process.env.REACT_APP_USER_ID as string;
 
-const ContactForm: React.FC = () => {
+type Props = {
+  fractionDefaultMessage: string;
+};
+const ContactForm: React.FC<Props> = ({ fractionDefaultMessage }) => {
   const { projectId } = useParams();
   const translate = useTranslate();
 
@@ -114,6 +117,9 @@ const ContactForm: React.FC = () => {
     return false;
   };
 
+  useEffect(() => {
+    setMessage(fractionDefaultMessage);
+  }, [fractionDefaultMessage]);
   return (
     <ContactFormContainer>
       <SectionHeader
