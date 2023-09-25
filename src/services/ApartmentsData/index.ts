@@ -1,67 +1,55 @@
-const exponent = "²";
-const euro = "€";
-
-type Apartment = {
-  fraction: string;
-  nature: string;
-  topology: string;
-  floor: string;
-  areaRaw: string;
-  areaExterior: string;
-  areaGarage: string;
-  areaStorage: string;
-  priceSale: string;
-  pricePreSale: string;
-  blueprintId: string;
-};
-
-type ApartmentField = {
-  label: string;
-};
+import {
+  Apartment,
+  FractionNature,
+  FractionStatus,
+} from "../../components/ApartmentsTable/ApartmentsTable.types";
 
 export const apartmentsData: Apartment[] = [
   {
     fraction: "A",
-    nature: "TOWNHOUSE",
+    nature: FractionNature.TOWNHOUSE,
     floor: "2",
     topology: "T2 DUPLEX",
     areaRaw: "119.30m²",
     areaExterior: "12.00m²",
     areaGarage: "34.70m²",
     areaStorage: "7.50m²",
-    priceSale: "-", //795 000 €
-    pricePreSale: "-", //715 500 €
+    priceSale: "795 000 €",
+    pricePreSale: "715 500 €",
     blueprintId: "1WjOLjZltug9izZjpv1J33TgGA06-Miwy",
+    status: FractionStatus.HIDDEN,
   },
   {
     fraction: "B",
-    nature: "TOWNHOUSE",
+    nature: FractionNature.TOWNHOUSE,
     floor: "2",
     topology: "T3 DUPLEX",
     areaRaw: "156.60m²",
     areaExterior: "34.00m²",
-    priceSale: "-",
-    pricePreSale: "RESERVADO",
+    priceSale: "1 150 000 €",
+    pricePreSale: "1 035 000 €",
     areaStorage: "30.90m²",
     areaGarage: "7.40m²",
     blueprintId: "1SUbA8JRtS3tBBK_YioCIOFjoOi_b9Ddr",
+    status: FractionStatus.RESERVED,
   },
   {
     fraction: "C",
-    nature: "TOWNHOUSE",
+    nature: FractionNature.TOWNHOUSE,
     floor: "2",
     topology: "T3 DUPLEX",
     areaRaw: "156.60m²",
     areaExterior: "34.00m²",
-    priceSale: "-", //1 150 000 €
-    pricePreSale: "-", //1 035 000 €
+    priceSale: "1 150 000 €",
+    pricePreSale: "1 035 000 €",
     areaStorage: "31.00m²",
     areaGarage: "7.40m²",
     blueprintId: "1VVB2ahH_00opBcIMkdoIHayeB8YLY4Y9",
+    status: FractionStatus.HIDDEN,
   },
   {
     fraction: "D",
-    nature: "TOWNHOUSE",
+    nature: FractionNature.TOWNHOUSE,
     floor: "2",
     topology: "T3 DUPLEX",
     areaRaw: "156.60m²",
@@ -71,62 +59,67 @@ export const apartmentsData: Apartment[] = [
     areaStorage: "31.00m²",
     areaGarage: "7.40m²",
     blueprintId: "1H1n-6DPmDZ1WlY3DCRKhu04mir1S2CEv",
+    status: FractionStatus.OPEN,
   },
   {
     fraction: "E",
-    nature: "TOWNHOUSE",
+    nature: FractionNature.TOWNHOUSE,
     floor: "2",
     topology: "T3 DUPLEX",
     areaRaw: "156.60m²",
     areaExterior: "34.00m²",
-    priceSale: "-", //1 150 000 €
-    pricePreSale: "-", //1 035 000 €
+    priceSale: "1 150 000 €",
+    pricePreSale: "1 035 000 €",
     areaStorage: "25.48m²",
     areaGarage: "7.40m²",
     blueprintId: "193vOTSTLz4M7oMj_g38kSlT6qulzZOUs",
+    status: FractionStatus.HIDDEN,
   },
   {
     fraction: "F",
-    nature: "TOWNHOUSE",
+    nature: FractionNature.TOWNHOUSE,
     floor: "2",
     topology: "T3 DUPLEX",
     areaRaw: "156.20m²",
     areaExterior: "34.00m²",
-    priceSale: "-", //1 150 000 €
-    pricePreSale: "-", //1 035 000 €
+    priceSale: "1 150 000 €",
+    pricePreSale: "1 035 000 €",
     areaStorage: "25.48m²",
     areaGarage: "7.40m²",
     blueprintId: "14vrhhG23dScbjgQwAOhmKZsP7XDx8AZJ",
+    status: FractionStatus.HIDDEN,
   },
   {
     fraction: "G",
-    nature: "TOWNHOUSE",
+    nature: FractionNature.TOWNHOUSE,
     floor: "2",
     topology: "T2 DUPLEX",
     areaRaw: "126.00m²",
     areaExterior: "25.00m²",
-    priceSale: "-", //935 000 €
-    pricePreSale: "-", //841 500 €
+    priceSale: "935 000 €",
+    pricePreSale: "841 500 €",
     areaStorage: "13.32m²",
     areaGarage: "7.50m²",
     blueprintId: "19puKKbcc8bBkIyDRTD3mBatJGaDqDEHR",
+    status: FractionStatus.HIDDEN,
   },
   {
     fraction: "H",
-    nature: "APARTAMENTO",
+    nature: FractionNature.APARTMENT,
     floor: "5",
     topology: "T2 DUPLEX",
     areaRaw: "103.80m²",
     areaExterior: "10.00m²",
-    priceSale: "-", //750 000 €
-    pricePreSale: "-", //675 000 €
+    priceSale: "750 000 €",
+    pricePreSale: "675 000 €",
     areaStorage: "26.30m²",
     areaGarage: "5.00m²",
     blueprintId: "1tuNPUjBXF0fTSgEKx-IX1Amc57soXJHQ",
+    status: FractionStatus.HIDDEN,
   },
   {
     fraction: "I",
-    nature: "APARTAMENTO",
+    nature: FractionNature.APARTMENT,
     floor: "5",
     topology: "T2 DUPLEX",
     areaRaw: "100.00m²",
@@ -136,49 +129,53 @@ export const apartmentsData: Apartment[] = [
     areaStorage: "26.30m²",
     areaGarage: "5.00m²",
     blueprintId: "1zR1XW_yC8uDIq9dS-vXzeYk3f12mcvnm",
+    status: FractionStatus.OPEN,
   },
   {
     fraction: "J",
-    nature: "APARTAMENTO",
+    nature: FractionNature.APARTMENT,
     floor: "5",
     topology: "T2 DUPLEX",
     areaRaw: "100.00m²",
     areaExterior: "10.00m²",
-    priceSale: "-", //750 000 €
-    pricePreSale: "-", //675 000 €
+    priceSale: "750 000 €",
+    pricePreSale: "675 000 €",
     areaStorage: "26.30m²",
     areaGarage: "5.00m²",
     blueprintId: "1EQWnYfpZzG1qFtVqjPjk17-a3lfyNZgn",
+    status: FractionStatus.HIDDEN,
   },
   {
     fraction: "K",
-    nature: "APARTAMENTO",
+    nature: FractionNature.APARTMENT,
     floor: "5",
     topology: "T2 DUPLEX",
     areaRaw: "103.80m²",
     areaExterior: "10.00m²",
-    priceSale: "-",
-    pricePreSale: "RESERVADO",
+    priceSale: "750 000 €",
+    pricePreSale: "675 000 €",
     areaStorage: "26.30m²",
     areaGarage: "5.00m²",
     blueprintId: "1v_TxzgAk0KLseclJLL7CEFdDKUXABEqK",
+    status: FractionStatus.RESERVED,
   },
   {
     fraction: "L",
-    nature: "APARTAMENTO",
+    nature: FractionNature.APARTMENT,
     floor: "4",
     topology: "T2",
     areaRaw: "91.20m²",
     areaExterior: "16.00m²",
-    priceSale: "-", //675 000 €
-    pricePreSale: "-", //607 500 €
+    priceSale: "675 000 €",
+    pricePreSale: "607 500 €",
     areaStorage: "18.80",
     areaGarage: "5.00m²",
     blueprintId: "1fpIKJI_3Xks4WG8QhMwryYI1z8alWMSA",
+    status: FractionStatus.HIDDEN,
   },
   {
     fraction: "M",
-    nature: "APARTAMENTO",
+    nature: FractionNature.APARTMENT,
     floor: "4",
     topology: "T2",
     areaRaw: "91.20m²",
@@ -188,5 +185,6 @@ export const apartmentsData: Apartment[] = [
     areaStorage: "18.00m²",
     areaGarage: "5.00m²",
     blueprintId: "1u1sKFWEwGGpzTdgwfKs2LE5PpnpYJMsF",
+    status: FractionStatus.OPEN,
   },
 ];

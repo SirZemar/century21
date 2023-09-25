@@ -19,8 +19,41 @@ const EN: Language = {
     TITLE: "Apartments with Distinctive Character",
     DESCRIPTION:
       "Discover well-designed spaces and intelligent layouts for your perfect new home.",
-    BLUEPRINTS: {
-      BUTTON: "View Blueprints",
+    ACTION: {
+      BLUEPRINTS: "View Blueprints",
+      MORE: "View apartment details",
+      LESS: "Hide apartment details",
+    },
+    TABLE: {
+      HEADER: {
+        FRACTION: "Fraction",
+        NATURE: "Nature",
+        TOPOLOGY: "Topology",
+        FLOOR: "Floor",
+        AREARAW: "Private Gross Area",
+        AREAEXTERIOR: "Exterior Area",
+        AREAGARAGE: "Garage",
+        AREASTORAGE: "Storage",
+        PRICESALE: "Sale Price",
+        PRICEPRESALE: "Pre Sale",
+        ACTION: "Action",
+      },
+      FRACTION: {
+        ACTION: {
+          BLUEPRINT: "Blueprint",
+          CONTACT: "Contact",
+        },
+        STATUS: {
+          SOLD: "Sold",
+          RESERVED: "Reserved",
+        },
+        NATURE: {
+          APARTMENT: "Apartment",
+          TOWNHOUSE: "Townhouse",
+        },
+        MESSAGE:
+          "I am interested and I would like to know more about the fraction",
+      },
     },
   },
   LOCATION: {

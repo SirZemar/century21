@@ -161,6 +161,24 @@ export const Views = styled.div`
   }
 `;
 
+export const Apartments = styled.div`
+  .showmore-hide {
+    display: block;
+    @media ${device.laptop} {
+      display: none;
+    }
+  }
+  .table-hide {
+    display: none;
+    @media ${device.laptop} {
+      display: flex !important;
+    }
+  }
+  .show {
+    display: flex !important;
+  }
+`;
+
 export const BlueprintsContainer = styled.div`
   padding: 40px 0px;
   text-align: center;

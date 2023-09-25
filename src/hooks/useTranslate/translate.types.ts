@@ -15,8 +15,40 @@ export type Language = {
     HEADER: string;
     TITLE: string;
     DESCRIPTION: string;
-    BLUEPRINTS: {
-      BUTTON: string;
+    ACTION: {
+      BLUEPRINTS: string;
+      MORE: string;
+      LESS: string;
+    };
+    TABLE: {
+      HEADER: {
+        FRACTION: string;
+        NATURE: string;
+        TOPOLOGY: string;
+        FLOOR: string;
+        AREARAW: string;
+        AREAEXTERIOR: string;
+        AREAGARAGE: string;
+        AREASTORAGE: string;
+        PRICESALE: string;
+        PRICEPRESALE: string;
+        ACTION: string;
+      };
+      FRACTION: {
+        ACTION: {
+          BLUEPRINT: string;
+          CONTACT: string;
+        };
+        STATUS: {
+          SOLD: string;
+          RESERVED: string;
+        };
+        NATURE: {
+          APARTMENT: string;
+          TOWNHOUSE: string;
+        };
+        MESSAGE: string;
+      };
     };
   };
   LOCATION: {

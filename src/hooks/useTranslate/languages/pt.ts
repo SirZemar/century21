@@ -19,8 +19,41 @@ const PT: Language = {
     TITLE: "Apartamentos com muita personalidade",
     DESCRIPTION:
       "Descubra espaços bem projetados e layouts inteligentes para seu novo lar perfeito.",
-    BLUEPRINTS: {
-      BUTTON: "Ver plantas",
+    ACTION: {
+      BLUEPRINTS: "Ver plantas",
+      MORE: "Ver mais detalhes dos apartamentos",
+      LESS: "Ver menos detalhes dos apartamentos",
+    },
+    TABLE: {
+      HEADER: {
+        FRACTION: "Fração",
+        NATURE: "Natureza",
+        TOPOLOGY: "Tipologia",
+        FLOOR: "Piso",
+        AREARAW: "Area Bruta Privativa",
+        AREAEXTERIOR: "Area Exterior",
+        AREAGARAGE: "Garagem",
+        AREASTORAGE: "Arrumos",
+        PRICESALE: "Preço Venda",
+        PRICEPRESALE: "Pre Vendas",
+        ACTION: "Acção",
+      },
+      FRACTION: {
+        ACTION: {
+          BLUEPRINT: "Planta",
+          CONTACT: "Contactar",
+        },
+        STATUS: {
+          SOLD: "Vendido",
+          RESERVED: "Reservado",
+        },
+        NATURE: {
+          APARTMENT: "Apartamento",
+          TOWNHOUSE: "Moradia",
+        },
+        MESSAGE:
+          "Estou interessado(a) e gostaria de ser contactado(a) para  saber mais sobre a fracção",
+      },
     },
   },
   LOCATION: {

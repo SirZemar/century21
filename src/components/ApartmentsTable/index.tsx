@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Button, Table } from "semantic-ui-react";
-import { apartmentsData } from "./ApartmentsTable.data";
+import { apartmentsData } from "../../services/ApartmentsData";
 import { ApartmentsTableContainer } from "./ApartmentsTable.styles";
 import useWindowResize from "../../hooks/useWindowResize";
 import { sizes } from "../../devices";
 import { useTranslate } from "../../hooks/useTranslate";
 import { useNavigate } from "react-router-dom";
+import {
+  FractionNature,
+  FractionStatus,
+  PriceTableCells,
+  PriceTableFields,
+} from "./ApartmentsTable.types";
 
 type Props = {
   setFormMessage: React.Dispatch<React.SetStateAction<string>>;
@@ -16,26 +22,26 @@ const ApartmentsTable: React.FC<Props> = ({ setFormMessage }) => {
   const translate = useTranslate();
   const navigate = useNavigate();
 
-  const [isSmallScreen, setIsMobile] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   const headerLabels = {
-    fraction: "Fração",
-    nature: "Natureza",
-    topology: "Tipologia",
-    floor: "Piso",
-    areRaw: "Area Bruta",
-    areaExterior: "Area Exterior",
-    areaGarage: "Garagem",
-    areaStorage: "Arrumos",
-    priceSale: "Preço Venda",
-    pricePreSale: "Pre Vendas",
-    info: "Mais Info",
+    fraction: translate.APARTMENTS.TABLE.HEADER.FRACTION,
+    nature: translate.APARTMENTS.TABLE.HEADER.NATURE,
+    topology: translate.APARTMENTS.TABLE.HEADER.TOPOLOGY,
+    floor: translate.APARTMENTS.TABLE.HEADER.FLOOR,
+    areRaw: translate.APARTMENTS.TABLE.HEADER.AREARAW,
+    areaExterior: translate.APARTMENTS.TABLE.HEADER.AREAEXTERIOR,
+    areaGarage: translate.APARTMENTS.TABLE.HEADER.AREAGARAGE,
+    areaStorage: translate.APARTMENTS.TABLE.HEADER.AREASTORAGE,
+    priceSale: translate.APARTMENTS.TABLE.HEADER.PRICESALE,
+    pricePreSale: translate.APARTMENTS.TABLE.HEADER.PRICEPRESALE,
+    info: translate.APARTMENTS.TABLE.HEADER.ACTION,
   };
   useEffect(() => {
     if (screenWidth >= sizes.laptop && isSmallScreen) {
-      setIsMobile(false);
+      setIsSmallScreen(false);
     } else if (screenWidth < sizes.laptop && !isSmallScreen) {
-      setIsMobile(true);
+      setIsSmallScreen(true);
     }
   }, [screenWidth]);
 
@@ -45,7 +51,7 @@ const ApartmentsTable: React.FC<Props> = ({ setFormMessage }) => {
 
   const handleReservationButtonClick = (fraction: string) => {
     setFormMessage(
-      `Hello, I want to know more information about fraction ${fraction}`
+      `${translate.APARTMENTS.TABLE.FRACTION.MESSAGE} ${fraction}.`
     );
   };
   return (
@@ -80,15 +86,22 @@ const ApartmentsTable: React.FC<Props> = ({ setFormMessage }) => {
                   }}
                 >
                   <Table.Cell>{apartment.fraction}</Table.Cell>
-                  <Table.Cell>{apartment.nature}</Table.Cell>
+                  <Table.Cell>
+                    {apartment.nature === FractionNature.TOWNHOUSE
+                      ? translate.APARTMENTS.TABLE.FRACTION.NATURE.TOWNHOUSE
+                      : translate.APARTMENTS.TABLE.FRACTION.NATURE.APARTMENT}
+                  </Table.Cell>
                   <Table.Cell>{apartment.topology}</Table.Cell>
                   <Table.Cell>{apartment.floor}</Table.Cell>
                   <Table.Cell>{apartment.areaRaw}</Table.Cell>
                   <Table.Cell>{apartment.areaExterior}</Table.Cell>
                   <Table.Cell>{apartment.areaGarage}</Table.Cell>
                   <Table.Cell>{apartment.areaStorage}</Table.Cell>
-                  <Table.Cell>{apartment.priceSale}</Table.Cell>
-                  <Table.Cell>{apartment.pricePreSale}</Table.Cell>
+                  <PriceTableCellsBigScreen
+                    status={apartment.status}
+                    pricePreSale={apartment.pricePreSale}
+                    priceSale={apartment.priceSale}
+                  />
                   <Table.Cell
                     style={{
                       display: "flex",
@@ -102,7 +115,7 @@ const ApartmentsTable: React.FC<Props> = ({ setFormMessage }) => {
                       }
                       className="blueprint-button"
                     >
-                      Planta
+                      {translate.APARTMENTS.TABLE.FRACTION.ACTION.BLUEPRINT}
                     </Button>
                     <a style={{ color: "rgba(0,0,0,.6)" }} href="#contact">
                       <Button
@@ -111,7 +124,7 @@ const ApartmentsTable: React.FC<Props> = ({ setFormMessage }) => {
                         }
                         className="blueprint-button"
                       >
-                        Contactar
+                        {translate.APARTMENTS.TABLE.FRACTION.ACTION.CONTACT}
                       </Button>
                     </a>
                   </Table.Cell>
@@ -136,36 +149,45 @@ const ApartmentsTable: React.FC<Props> = ({ setFormMessage }) => {
                   }}
                 >
                   <Table.Cell>
-                    <p className="mobile-fraction-table">
-                      {headerLabels.fraction}: {apartment.fraction}
-                    </p>
-                    <p className="mobile-fraction-table">
-                      {headerLabels.nature}: {apartment.nature}
-                    </p>
-                    <p className="mobile-fraction-table">
-                      {headerLabels.topology}: {apartment.topology}
-                    </p>
-                    <p className="mobile-fraction-table">
-                      {headerLabels.floor}: {apartment.floor}
-                    </p>
-                    <p className="mobile-fraction-table">
-                      {headerLabels.areRaw}: {apartment.areaRaw}
-                    </p>
-                    <p className="mobile-fraction-table">
-                      {headerLabels.areaExterior}: {apartment.areaExterior}
-                    </p>
-                    <p className="mobile-fraction-table">
-                      {headerLabels.areaExterior}: {apartment.areaGarage}
-                    </p>
-                    <p className="mobile-fraction-table">
-                      {headerLabels.areaExterior}: {apartment.areaStorage}
-                    </p>
-                    <p className="mobile-fraction-table">
-                      {headerLabels.pricePreSale}: {apartment.priceSale}
-                    </p>
-                    <p className="mobile-fraction-table">
-                      {headerLabels.pricePreSale}: {apartment.pricePreSale}
-                    </p>
+                    <LabelAndValueSmallScreen
+                      label={headerLabels.fraction}
+                      value={apartment.fraction}
+                    />
+                    <LabelAndValueSmallScreen
+                      label={headerLabels.nature}
+                      value={
+                        apartment.nature === FractionNature.TOWNHOUSE
+                          ? translate.APARTMENTS.TABLE.FRACTION.NATURE.TOWNHOUSE
+                          : translate.APARTMENTS.TABLE.FRACTION.NATURE.APARTMENT
+                      }
+                    />
+                    <LabelAndValueSmallScreen
+                      label={headerLabels.topology}
+                      value={apartment.topology}
+                    />
+                    <LabelAndValueSmallScreen
+                      label={headerLabels.floor}
+                      value={apartment.floor}
+                    />
+                    <LabelAndValueSmallScreen
+                      label={headerLabels.areRaw}
+                      value={apartment.areaRaw}
+                    />
+                    <LabelAndValueSmallScreen
+                      label={headerLabels.areaExterior}
+                      value={apartment.areaExterior}
+                    />
+                    <LabelAndValueSmallScreen
+                      label={headerLabels.areaStorage}
+                      value={apartment.areaStorage}
+                    />
+                    <PriceTableCellsSmallScreen
+                      status={apartment.status}
+                      pricePreSale={apartment.pricePreSale}
+                      priceSale={apartment.priceSale}
+                      pricePreSaleLabel={headerLabels.pricePreSale}
+                      priceSaleLabel={headerLabels.priceSale}
+                    />
                   </Table.Cell>
                   <Table.Cell
                     style={{
@@ -182,7 +204,7 @@ const ApartmentsTable: React.FC<Props> = ({ setFormMessage }) => {
                       }
                       className="blueprint-button"
                     >
-                      Planta
+                      {translate.APARTMENTS.TABLE.FRACTION.ACTION.BLUEPRINT}
                     </Button>
                     <a style={{ color: "rgba(0,0,0,.6)" }} href="#contact">
                       <Button
@@ -191,7 +213,7 @@ const ApartmentsTable: React.FC<Props> = ({ setFormMessage }) => {
                         }
                         className="blueprint-button"
                       >
-                        Contactar
+                        {translate.APARTMENTS.TABLE.FRACTION.ACTION.CONTACT}
                       </Button>
                     </a>
                   </Table.Cell>
@@ -203,5 +225,105 @@ const ApartmentsTable: React.FC<Props> = ({ setFormMessage }) => {
     </ApartmentsTableContainer>
   );
 };
+
+const PriceTableCellsBigScreen: React.FC<PriceTableCells> = ({
+  status,
+  priceSale,
+  pricePreSale,
+}) => {
+  const translate = useTranslate();
+
+  if (status === FractionStatus.OPEN) {
+    return (
+      <>
+        <Table.Cell>{priceSale}</Table.Cell>
+        <Table.Cell>{pricePreSale}</Table.Cell>
+      </>
+    );
+  } else if (status === FractionStatus.HIDDEN) {
+    return (
+      <>
+        <Table.Cell>-</Table.Cell>
+        <Table.Cell>-</Table.Cell>
+      </>
+    );
+  } else if (status === FractionStatus.RESERVED) {
+    return (
+      <>
+        <Table.Cell>-</Table.Cell>
+        <Table.Cell>
+          {translate.APARTMENTS.TABLE.FRACTION.STATUS.RESERVED}
+        </Table.Cell>
+      </>
+    );
+  } else if (status === FractionStatus.SOLD) {
+    return (
+      <>
+        <Table.Cell>
+          {translate.APARTMENTS.TABLE.FRACTION.STATUS.SOLD}
+        </Table.Cell>
+        <Table.Cell>-</Table.Cell>
+      </>
+    );
+  }
+  return null;
+};
+
+const PriceTableCellsSmallScreen: React.FC<PriceTableFields> = ({
+  status,
+  priceSale,
+  pricePreSale,
+  priceSaleLabel,
+  pricePreSaleLabel,
+}) => {
+  const translate = useTranslate();
+
+  if (status === FractionStatus.OPEN) {
+    return (
+      <>
+        <LabelAndValueSmallScreen label={priceSaleLabel} value={priceSale} />
+        <LabelAndValueSmallScreen
+          label={pricePreSaleLabel}
+          value={pricePreSale}
+        />
+      </>
+    );
+  } else if (status === FractionStatus.HIDDEN) {
+    return (
+      <>
+        <LabelAndValueSmallScreen label={priceSaleLabel} value={"-"} />
+        <LabelAndValueSmallScreen label={pricePreSaleLabel} value={"-"} />
+      </>
+    );
+  } else if (status === FractionStatus.RESERVED) {
+    return (
+      <>
+        <LabelAndValueSmallScreen label={priceSaleLabel} value={"-"} />
+        <LabelAndValueSmallScreen
+          label={pricePreSaleLabel}
+          value={translate.APARTMENTS.TABLE.FRACTION.STATUS.RESERVED}
+        />
+      </>
+    );
+  } else if (status === FractionStatus.SOLD) {
+    return (
+      <>
+        <LabelAndValueSmallScreen
+          label={priceSaleLabel}
+          value={translate.APARTMENTS.TABLE.FRACTION.STATUS.SOLD}
+        />
+        <LabelAndValueSmallScreen label={pricePreSaleLabel} value={"-"} />
+      </>
+    );
+  }
+  return null;
+};
+
+const LabelAndValueSmallScreen: React.FC<any> = ({ label, value }) => (
+  <p className="mobile-fraction-table">
+    <b>{label}: </b>
+    {value}
+  </p>
+);
 
 export default ApartmentsTable;

@@ -8,6 +8,7 @@ import {
   Wrapper,
   BlueprintsContainer,
   Container,
+  Apartments,
 } from "./Project.styles";
 import { useNavigate, useParams } from "react-router-dom";
 import {
@@ -37,6 +38,7 @@ const Project: React.FC = () => {
   const translate = useTranslate();
 
   const [loaded, setLoaded] = useState(false);
+  const [isTableOpen, setIsTableOpen] = useState(false);
 
   const [
     contactFormFractionDefaultMessage,
@@ -115,25 +117,51 @@ const Project: React.FC = () => {
         </Wrapper>
       </Section>
       <Section id="apartments">
-        <Container className="background-color-secondary center-row">
-          <Wrapper>
-            <BlueprintsContainer className="center-column">
-              <SectionHeader color={TitleDecoratorImgColor.PRIMARY}>
-                {translate.APARTMENTS.HEADER}
-              </SectionHeader>
-              <h2>{translate.APARTMENTS.TITLE}</h2>
-              <p>{translate.APARTMENTS.DESCRIPTION}</p>
-              <Button onClick={handleBlueprintsButtonClick}>
-                {translate.APARTMENTS.BLUEPRINTS.BUTTON}
-              </Button>
-            </BlueprintsContainer>
-          </Wrapper>
-        </Container>
-        <Container className="center-row">
-          <ApartmentsTable
-            setFormMessage={setContactFormFractionDefaultMessage}
-          />
-        </Container>
+        <Apartments>
+          <Container className="background-color-secondary center-row">
+            <Wrapper>
+              <BlueprintsContainer className="center-column">
+                <SectionHeader color={TitleDecoratorImgColor.PRIMARY}>
+                  {translate.APARTMENTS.HEADER}
+                </SectionHeader>
+                <h2>{translate.APARTMENTS.TITLE}</h2>
+                <p>{translate.APARTMENTS.DESCRIPTION}</p>
+                <Button onClick={handleBlueprintsButtonClick}>
+                  {translate.APARTMENTS.ACTION.BLUEPRINTS}
+                </Button>
+                <Container
+                  className="showmore-hide"
+                  onClick={() => setIsTableOpen((prev) => !prev)}
+                >
+                  <h3
+                    style={{
+                      color: "var(--secondaryLight)",
+                      textDecoration: "underline",
+                      marginTop: "40px",
+                      padding: "5px",
+                      paddingBottom: "0px",
+                    }}
+                  >
+                    {isTableOpen
+                      ? translate.APARTMENTS.ACTION.LESS
+                      : translate.APARTMENTS.ACTION.MORE}
+                  </h3>
+                </Container>
+              </BlueprintsContainer>
+            </Wrapper>
+          </Container>
+          <Container
+            className={
+              isTableOpen
+                ? "center-row table-hide show"
+                : "center-row table-hide"
+            }
+          >
+            <ApartmentsTable
+              setFormMessage={setContactFormFractionDefaultMessage}
+            />
+          </Container>
+        </Apartments>
       </Section>
       <Section className="center-row">
         <Wrapper>

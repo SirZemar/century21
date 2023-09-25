@@ -10,7 +10,15 @@ export const ApartmentsTableContainer = styled.div`
     margin-top: 40px;
   }
 
+  .ui.table:first-child {
+    margin-top: auto;
+  }
   overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   .ui.table {
     text-align: center;
     @media ${device.mobileL} {
@@ -25,10 +33,19 @@ export const ApartmentsTableContainer = styled.div`
     tbody {
       font-size: 0.8rem;
       white-space: nowrap;
+
+      @media ${device.laptopL} {
+        font-size: 1rem;
+      }
     }
     thead th {
       background: var(--primary);
       color: var(--neutralLightest);
+      font-size: 0.9rem;
+
+      @media ${device.laptopL} {
+        font-size: 1.1rem;
+      }
     }
   }
   .blueprint-button {
