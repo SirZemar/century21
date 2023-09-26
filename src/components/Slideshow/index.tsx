@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, SlideshowContainer } from "./Slideshow.styles";
 import { Slide } from "react-slideshow-image";
-import { sizes as deviceWidth } from "../../devices";
+import { device, sizes as deviceWidth, sizes } from "../../devices";
 import { slideshowImages } from "../../images/apartment";
 import SectionHeader from "../../common/components/SectionHeader";
 import {
@@ -12,7 +12,6 @@ import useWindowResize from "../../hooks/useWindowResize";
 import { useTranslate } from "../../hooks/useTranslate";
 
 const Slideshow: React.FC = () => {
-  // const [screenWidth, setScreenWidth] = useState(0);
   const [slideSpeed, setSlideSpeed] = useState(0);
   const screenWidth = useWindowResize();
   const translate = useTranslate();
@@ -56,9 +55,21 @@ const Slideshow: React.FC = () => {
 
   return (
     <>
-      <Container className="center-row">
+      <Container
+        className="center-row"
+        style={{
+          backgroundColor:
+            screenWidth < sizes.tablet ? "var(--primary)" : "var(--light)",
+          marginBottom: "-2px",
+          color: screenWidth < sizes.tablet ? "var(--light)" : "var(--primary)",
+        }}
+      >
         <SectionHeader
-          color={TitleDecoratorImgColor.PRIMARY}
+          color={
+            screenWidth < sizes.tablet
+              ? TitleDecoratorImgColor.SECONDARY
+              : TitleDecoratorImgColor.PRIMARY
+          }
           size={TitleDecoratorImgSize.LARGE}
         >
           {translate.SLIDESHOW.HEADER}
