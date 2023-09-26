@@ -69,7 +69,6 @@ const ApartmentsTable: React.FC<Props> = ({ setFormMessage }) => {
               <Table.HeaderCell>{headerLabels.areaGarage}</Table.HeaderCell>
               <Table.HeaderCell>{headerLabels.areaStorage}</Table.HeaderCell>
               <Table.HeaderCell>{headerLabels.priceSale}</Table.HeaderCell>
-              <Table.HeaderCell>{headerLabels.pricePreSale}</Table.HeaderCell>
               <Table.HeaderCell>{headerLabels.info}</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
@@ -99,7 +98,6 @@ const ApartmentsTable: React.FC<Props> = ({ setFormMessage }) => {
                   <Table.Cell>{apartment.areaStorage}</Table.Cell>
                   <PriceTableCellsBigScreen
                     status={apartment.status}
-                    pricePreSale={apartment.pricePreSale}
                     priceSale={apartment.priceSale}
                   />
                   <Table.Cell
@@ -183,9 +181,7 @@ const ApartmentsTable: React.FC<Props> = ({ setFormMessage }) => {
                     />
                     <PriceTableCellsSmallScreen
                       status={apartment.status}
-                      pricePreSale={apartment.pricePreSale}
                       priceSale={apartment.priceSale}
-                      pricePreSaleLabel={headerLabels.pricePreSale}
                       priceSaleLabel={headerLabels.priceSale}
                     />
                   </Table.Cell>
@@ -229,41 +225,28 @@ const ApartmentsTable: React.FC<Props> = ({ setFormMessage }) => {
 const PriceTableCellsBigScreen: React.FC<PriceTableCells> = ({
   status,
   priceSale,
-  pricePreSale,
 }) => {
   const translate = useTranslate();
 
   if (status === FractionStatus.OPEN) {
     return (
-      <>
         <Table.Cell>{priceSale}</Table.Cell>
-        <Table.Cell>{pricePreSale}</Table.Cell>
-      </>
     );
   } else if (status === FractionStatus.HIDDEN) {
     return (
-      <>
         <Table.Cell>-</Table.Cell>
-        <Table.Cell>-</Table.Cell>
-      </>
     );
   } else if (status === FractionStatus.RESERVED) {
     return (
-      <>
-        <Table.Cell>-</Table.Cell>
         <Table.Cell>
           {translate.APARTMENTS.TABLE.FRACTION.STATUS.RESERVED}
         </Table.Cell>
-      </>
     );
   } else if (status === FractionStatus.SOLD) {
     return (
-      <>
         <Table.Cell>
           {translate.APARTMENTS.TABLE.FRACTION.STATUS.SOLD}
         </Table.Cell>
-        <Table.Cell>-</Table.Cell>
-      </>
     );
   }
   return null;
@@ -272,48 +255,31 @@ const PriceTableCellsBigScreen: React.FC<PriceTableCells> = ({
 const PriceTableCellsSmallScreen: React.FC<PriceTableFields> = ({
   status,
   priceSale,
-  pricePreSale,
   priceSaleLabel,
-  pricePreSaleLabel,
 }) => {
   const translate = useTranslate();
 
   if (status === FractionStatus.OPEN) {
     return (
-      <>
         <LabelAndValueSmallScreen label={priceSaleLabel} value={priceSale} />
-        <LabelAndValueSmallScreen
-          label={pricePreSaleLabel}
-          value={pricePreSale}
-        />
-      </>
     );
   } else if (status === FractionStatus.HIDDEN) {
     return (
-      <>
         <LabelAndValueSmallScreen label={priceSaleLabel} value={"-"} />
-        <LabelAndValueSmallScreen label={pricePreSaleLabel} value={"-"} />
-      </>
     );
   } else if (status === FractionStatus.RESERVED) {
     return (
-      <>
-        <LabelAndValueSmallScreen label={priceSaleLabel} value={"-"} />
         <LabelAndValueSmallScreen
-          label={pricePreSaleLabel}
+          label={priceSaleLabel}
           value={translate.APARTMENTS.TABLE.FRACTION.STATUS.RESERVED}
         />
-      </>
     );
   } else if (status === FractionStatus.SOLD) {
     return (
-      <>
         <LabelAndValueSmallScreen
           label={priceSaleLabel}
           value={translate.APARTMENTS.TABLE.FRACTION.STATUS.SOLD}
         />
-        <LabelAndValueSmallScreen label={pricePreSaleLabel} value={"-"} />
-      </>
     );
   }
   return null;

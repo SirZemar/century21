@@ -13,11 +13,9 @@ export enum FractionStatus {
 export type PriceTableCells = {
   status: Status;
   priceSale: string;
-  pricePreSale: string;
 };
 export type PriceTableFields = PriceTableCells & {
   priceSaleLabel: string;
-  pricePreSaleLabel: string;
 };
 
 type Nature = FractionNature.TOWNHOUSE | FractionNature.APARTMENT;
