@@ -81,8 +81,7 @@ const Project: React.FC = () => {
             ${image2Size900} 900w,
             ${image2Size1400} 1400w,
             ${image2Original}`}
-            sizes={`${device.tablet} 1500px`}
-            // sizes="(max-width: 600px) 600px, (max-width: 900px) 900px, (max-width: 1400px) 1400px, 1600px"
+            sizes="(max-width: 300px) 600px,(max-width: 600px) 1200px, (max-width: 900px) 1800px, (max-width: 1400px) 2800px, 4600px"
           />
         </HeroImage>
       </Section>
