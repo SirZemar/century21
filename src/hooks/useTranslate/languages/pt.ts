@@ -14,6 +14,9 @@ const PT: Language = {
       "Apartamentos de luxo localizados numa das melhores zonas da cidade. Todos os apartamentos têm uma vista de excelência e uma varanda na qual pode apreciar a beleza interminável do rio Douro.",
     TEXT: "Este é um lugar perfeito para receber amigos e familiares, para criar memórias e compartilhar momentos, tudo rodeado pelas vistas deslumbrantes que só a região do Douro pode proporcionar.",
   },
+  SLIDESHOW: {
+    HEADER: "Galeria",
+  },
   APARTMENTS: {
     HEADER: "Apartamentos",
     TITLE: "Apartamentos com muita personalidade",

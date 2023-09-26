@@ -8,10 +8,15 @@ import {
   TitleDecoratorImgColor,
   TitleDecoratorImgSize,
 } from "../../common/components/TitleShieldDecorator";
+import useWindowResize from "../../hooks/useWindowResize";
+import { useTranslate } from "../../hooks/useTranslate";
 
 const Slideshow: React.FC = () => {
-  const [screenWidth, setScreenWidth] = useState(0);
+  // const [screenWidth, setScreenWidth] = useState(0);
   const [slideSpeed, setSlideSpeed] = useState(0);
+  const screenWidth = useWindowResize();
+  const translate = useTranslate();
+
   const images = slideshowImages;
 
   const buttonStyle = {
@@ -45,19 +50,8 @@ const Slideshow: React.FC = () => {
     ),
   };
 
-  const handleWindowResize = () => {
-    const width = window.innerWidth;
-    setScreenWidth(width);
-  };
-
   useEffect(() => {
-    handleWindowResize();
     screenWidth > deviceWidth.laptop ? setSlideSpeed(1000) : setSlideSpeed(100);
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("resize", () => handleWindowResize());
-    return window.removeEventListener("resize", () => handleWindowResize());
   }, [screenWidth]);
 
   return (
@@ -67,7 +61,7 @@ const Slideshow: React.FC = () => {
           color={TitleDecoratorImgColor.PRIMARY}
           size={TitleDecoratorImgSize.LARGE}
         >
-          Galeria
+          {translate.SLIDESHOW.HEADER}
         </SectionHeader>
       </Container>
       <SlideshowContainer

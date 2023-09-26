@@ -11,6 +11,9 @@ export type Language = {
     DESCRIPTION: string;
     TEXT: string;
   };
+  SLIDESHOW: {
+    HEADER: string;
+  };
   APARTMENTS: {
     HEADER: string;
     TITLE: string;

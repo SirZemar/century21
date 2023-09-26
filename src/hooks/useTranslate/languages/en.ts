@@ -14,6 +14,9 @@ const EN: Language = {
       "Luxury apartments located in one of the city's best areas. All apartments offer outstanding views and a balcony where you can enjoy the endless beauty of the Douro River.",
     TEXT: "This is a perfect place to welcome friends and family, create memories, and share moments, all surrounded by the breathtaking views that only the Douro region can provide.",
   },
+  SLIDESHOW: {
+    HEADER: "Gallery",
+  },
   APARTMENTS: {
     HEADER: "Apartments",
     TITLE: "Apartments with Distinctive Character",
