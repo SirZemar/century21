@@ -16,7 +16,12 @@ const Blueprints: React.FC = () => {
         width: "100vw",
       }}
     >
-      <iframe src={srcBlueprints} height="100%" width="100%"></iframe>
+      <iframe
+        title="Apartments blueprints"
+        src={srcBlueprints}
+        height="100%"
+        width="100%"
+      ></iframe>
     </div>
   );
 };

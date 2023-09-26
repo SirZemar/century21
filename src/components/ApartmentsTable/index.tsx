@@ -43,7 +43,7 @@ const ApartmentsTable: React.FC<Props> = ({ setFormMessage }) => {
     } else if (screenWidth < sizes.laptop && !isSmallScreen) {
       setIsSmallScreen(true);
     }
-  }, [screenWidth]);
+  }, [screenWidth, isSmallScreen]);
 
   const handleBlueprintsButtonClick = (blueprint: string) => {
     navigate(`blueprints/${blueprint}`);

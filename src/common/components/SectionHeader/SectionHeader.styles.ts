@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { TitleDecoratorImgColor } from "../TitleShieldDecorator";
-import { TitleDecoratorImgSize } from "../TitleShieldDecorator";
 
 interface Props {
   size?: string;

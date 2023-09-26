@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import { image2Size1400 } from "../../images/apartment";
 import { heightNoNavbar } from "../../utils.styles";
 import { device } from "../../devices";
 

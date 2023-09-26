@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   HeroImage,
   ProjectContainer,
@@ -10,7 +10,7 @@ import {
   Container,
   Apartments,
 } from "./Project.styles";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   image2Size900,
   image2Size600,
@@ -26,14 +26,12 @@ import Location from "../../components/Location";
 import { Button } from "semantic-ui-react";
 import SectionHeader from "../../common/components/SectionHeader";
 import Footer from "../../components/Footer";
-import { device } from "../../devices";
 import { useTranslate } from "../../hooks/useTranslate";
 import { TitleDecoratorImgColor } from "../../common/components/TitleShieldDecorator";
-import { ApartmentsTableContainer } from "../../components/ApartmentsTable/ApartmentsTable.styles";
 import ApartmentsTable from "../../components/ApartmentsTable";
 
 const Project: React.FC = () => {
-  const { projectId } = useParams();
+  // const { projectId } = useParams();
   const navigate = useNavigate();
   const translate = useTranslate();
 
@@ -72,6 +70,7 @@ const Project: React.FC = () => {
             />
           )}
           <img
+            alt="Front of the entire building at night with some of the apartments windows glowing light"
             onLoad={() => {
               setLoaded(true);
             }}

@@ -5,7 +5,6 @@ import reportWebVitals from './reportWebVitals';
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Page404 from "./pages/Page404";
 import Projects from "./pages/Projects";
-import Home from "./pages/Home";
 import Project from "./pages/Project";
 import Blueprints from "./pages/Blueprints";
 
@@ -16,7 +15,6 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        // element: <Home />,
         element: <Project />,
       },
       {

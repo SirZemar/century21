@@ -14,8 +14,6 @@ import {
   formPhoneRegex as phoneRegex,
   formEmailRegex as emailRegex,
 } from "../../utils";
-
-import { useParams } from "react-router-dom";
 import SectionHeader from "../../common/components/SectionHeader";
 
 import {
@@ -36,7 +34,7 @@ type Props = {
   fractionDefaultMessage: string;
 };
 const ContactForm: React.FC<Props> = ({ fractionDefaultMessage }) => {
-  const { projectId } = useParams();
+  // const { projectId } = useParams();
   const translate = useTranslate();
 
   const formRef = React.useRef(null);

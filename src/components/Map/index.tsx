@@ -19,12 +19,12 @@ const Map: React.FC = () => {
     if (process.env.REACT_APP_MAPS_API_KEY) {
       mapApiKey = process.env.REACT_APP_MAPS_API_KEY;
     } else {
-      throw "Map API key is missing";
+      throw new Error("Map API key is missing");
     }
     if (process.env.REACT_APP_MAP_ID) {
       mapId = process.env.REACT_APP_MAP_ID;
     } else {
-      throw "Map ID is missing";
+      throw new Error("Map ID is missing");
     }
   } catch (error) {
     console.warn(error);

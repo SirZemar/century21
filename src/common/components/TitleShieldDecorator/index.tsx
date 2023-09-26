@@ -46,7 +46,7 @@ const TitleDecorator: React.FC<Props> = ({
 
   if (color === TitleDecoratorImgColor.PRIMARY) {
     imageColor = "var(--primary)";
-  } else if (color == TitleDecoratorImgColor.SECONDARY) {
+  } else if (color === TitleDecoratorImgColor.SECONDARY) {
     imageColor = "var(--secondary)";
   }
 

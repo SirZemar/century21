@@ -14,15 +14,16 @@ import { ItemIndex } from "../../hooks/useTranslate/translate.types";
 type Item = {
   icon: string;
   id: ItemIndex;
+  description: string;
 };
 const Location: React.FC = () => {
   const translate = useTranslate();
 
   const items: Item[] = [
-    { icon: trainIcon, id: "ITEM1" },
-    { icon: busIcon, id: "ITEM2" },
-    { icon: bullseyeIcon, id: "ITEM3" },
-    { icon: bridgeIcon, id: "ITEM4" },
+    { icon: trainIcon, id: "ITEM1", description: "Train icon" },
+    { icon: busIcon, id: "ITEM2", description: "Bus icon" },
+    { icon: bullseyeIcon, id: "ITEM3", description: "Bullseye icon" },
+    { icon: bridgeIcon, id: "ITEM4", description: "Bridge icon" },
   ];
   return (
     <LocationContainer>
@@ -35,6 +36,7 @@ const Location: React.FC = () => {
               <li key={item.id} className="location__info__list__item">
                 <div className="location__info__list__item__reference">
                   <img
+                    alt={item.description}
                     className="location__info__list__item__reference__icon"
                     src={item.icon}
                   />

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, SlideshowContainer } from "./Slideshow.styles";
 import { Slide } from "react-slideshow-image";
-import { device, sizes as deviceWidth, sizes } from "../../devices";
+import { sizes as deviceWidth, sizes } from "../../devices";
 import { slideshowImages } from "../../images/apartment";
 import SectionHeader from "../../common/components/SectionHeader";
 import {
@@ -100,6 +100,7 @@ const Slideshow: React.FC = () => {
               }}
             >
               <img
+                alt="Apartment"
                 draggable={false}
                 src={image}
                 className="slideshow__slide-image"
