@@ -106,18 +106,30 @@ section header {
 
 h1 {
   font-size: 2rem;
+  @media ${device.desktop} {
+    font-size: 2.1rem;
+  }
 }
 
 h2 {
   font-size: 1.6rem;
+  @media ${device.desktop} {
+    font-size: 1.7rem;
+  }
 }
 
 h3 {
   font-size: 1.3rem;
+  @media ${device.desktop} {
+    font-size: 1.5rem;
+  }
 }
 
 h4 {
   font-size: 1.1rem;
+  @media ${device.desktop} {
+    font-size: 1.3rem;
+  }
 }
 
 p {
@@ -126,8 +138,11 @@ p {
   @media ${device.tablet} {
     font-size: 1.4rem;
   }
-  @media ${device.laptop} {
+  /* @media ${device.laptop} {
     font-size: 1rem;
   }
+  @media ${device.desktop} {
+    font-size: 1.4rem;
+  } */
 }
 `;
