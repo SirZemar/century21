@@ -135,88 +135,92 @@ const ApartmentsTable: React.FC<Props> = ({ setFormMessage }) => {
       {isSmallScreen &&
         apartmentsData.map((apartment, i) => {
           return (
-            <Table unstackable={true} key={apartment.fraction}>
-              <Table.Body className="unstackable">
-                <Table.Row
-                  key={apartment.fraction}
-                  style={{
-                    backgroundColor:
-                      i % 2
-                        ? "var(--neutralLightest)"
-                        : "var(--secondaryLight)",
-                  }}
-                >
-                  <Table.Cell>
-                    <LabelAndValueSmallScreen
-                      label={headerLabels.fraction}
-                      value={apartment.fraction}
-                    />
-                    <LabelAndValueSmallScreen
-                      label={headerLabels.nature}
-                      value={
-                        apartment.nature === FractionNature.TOWNHOUSE
-                          ? translate.APARTMENTS.TABLE.FRACTION.NATURE.TOWNHOUSE
-                          : translate.APARTMENTS.TABLE.FRACTION.NATURE.APARTMENT
-                      }
-                    />
-                    <LabelAndValueSmallScreen
-                      label={headerLabels.topology}
-                      value={apartment.topology}
-                    />
-                    <LabelAndValueSmallScreen
-                      label={headerLabels.floor}
-                      value={apartment.floor}
-                    />
-                    <LabelAndValueSmallScreen
-                      label={headerLabels.areRaw}
-                      value={apartment.areaRaw}
-                    />
-                    <LabelAndValueSmallScreen
-                      label={headerLabels.areaExterior}
-                      value={apartment.areaExterior}
-                    />
-                    <LabelAndValueSmallScreen
-                      label={headerLabels.areaStorage}
-                      value={apartment.areaStorage}
-                    />
-                    <PriceTableCellsSmallScreen
-                      status={apartment.status}
-                      priceSale={apartment.priceSale}
-                      priceSaleLabel={headerLabels.priceSale}
-                    />
-                  </Table.Cell>
-                  <Table.Cell
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "center",
-                      height: "250px",
-                      gap: "40px",
-                    }}
-                  >
-                    <Button
-                      onClick={() =>
-                        handleBlueprintsButtonClick(apartment.blueprintId)
-                      }
-                      className="blueprint-button"
-                    >
-                      {translate.APARTMENTS.TABLE.FRACTION.ACTION.BLUEPRINT}
-                    </Button>
-                    <a style={{ color: "rgba(0,0,0,.6)" }} href="#contact">
-                      <Button
-                        onClick={() =>
-                          handleReservationButtonClick(apartment.fraction)
-                        }
-                        className="blueprint-button"
-                      >
-                        {translate.APARTMENTS.TABLE.FRACTION.ACTION.CONTACT}
-                      </Button>
-                    </a>
-                  </Table.Cell>
-                </Table.Row>
-              </Table.Body>
-            </Table>
-          );
+						<Table unstackable={true} key={apartment.fraction}>
+							<Table.Body className='unstackable'>
+								<Table.Row
+									key={apartment.fraction}
+									style={{
+										backgroundColor:
+											i % 2
+												? "var(--neutralLightest)"
+												: "var(--secondaryLight)",
+									}}
+								>
+									<Table.Cell>
+										<LabelAndValueSmallScreen
+											label={headerLabels.fraction}
+											value={apartment.fraction}
+										/>
+										<LabelAndValueSmallScreen
+											label={headerLabels.nature}
+											value={
+												apartment.nature === FractionNature.TOWNHOUSE
+													? translate.APARTMENTS.TABLE.FRACTION.NATURE.TOWNHOUSE
+													: translate.APARTMENTS.TABLE.FRACTION.NATURE.APARTMENT
+											}
+										/>
+										<LabelAndValueSmallScreen
+											label={headerLabels.topology}
+											value={apartment.topology}
+										/>
+										<LabelAndValueSmallScreen
+											label={headerLabels.floor}
+											value={apartment.floor}
+										/>
+										<LabelAndValueSmallScreen
+											label={headerLabels.areRaw}
+											value={apartment.areaRaw}
+										/>
+										<LabelAndValueSmallScreen
+											label={headerLabels.areaExterior}
+											value={apartment.areaExterior}
+										/>
+										<LabelAndValueSmallScreen
+											label={headerLabels.areaGarage}
+											value={apartment.areaGarage}
+										/>
+										<LabelAndValueSmallScreen
+											label={headerLabels.areaStorage}
+											value={apartment.areaStorage}
+										/>
+										<PriceTableCellsSmallScreen
+											status={apartment.status}
+											priceSale={apartment.priceSale}
+											priceSaleLabel={headerLabels.priceSale}
+										/>
+									</Table.Cell>
+									<Table.Cell
+										style={{
+											display: "flex",
+											flexDirection: "column",
+											justifyContent: "center",
+											height: "250px",
+											gap: "40px",
+										}}
+									>
+										<Button
+											onClick={() =>
+												handleBlueprintsButtonClick(apartment.blueprintId)
+											}
+											className='blueprint-button'
+										>
+											{translate.APARTMENTS.TABLE.FRACTION.ACTION.BLUEPRINT}
+										</Button>
+										<a style={{ color: "rgba(0,0,0,.6)" }} href='#contact'>
+											<Button
+												onClick={() =>
+													handleReservationButtonClick(apartment.fraction)
+												}
+												className='blueprint-button'
+											>
+												{translate.APARTMENTS.TABLE.FRACTION.ACTION.CONTACT}
+											</Button>
+										</a>
+									</Table.Cell>
+								</Table.Row>
+							</Table.Body>
+						</Table>
+					);
         })}
     </ApartmentsTableContainer>
   );
