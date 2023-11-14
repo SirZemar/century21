@@ -7,7 +7,7 @@ import {
 export const apartmentsData: Apartment[] = [
 	{
 		fraction: "A",
-		nature: FractionNature.TOWNHOUSE,
+		nature: FractionNature.APARTMENT,
 		floor: "2",
 		topology: "T2 DUPLEX",
 		areaRaw: "119.30m²",
@@ -21,7 +21,7 @@ export const apartmentsData: Apartment[] = [
 	},
 	{
 		fraction: "B",
-		nature: FractionNature.TOWNHOUSE,
+		nature: FractionNature.APARTMENT,
 		floor: "2",
 		topology: "T3 DUPLEX",
 		areaRaw: "156.60m²",
@@ -35,7 +35,7 @@ export const apartmentsData: Apartment[] = [
 	},
 	{
 		fraction: "C",
-		nature: FractionNature.TOWNHOUSE,
+		nature: FractionNature.APARTMENT,
 		floor: "2",
 		topology: "T3 DUPLEX",
 		areaRaw: "156.60m²",
@@ -49,7 +49,7 @@ export const apartmentsData: Apartment[] = [
 	},
 	{
 		fraction: "D",
-		nature: FractionNature.TOWNHOUSE,
+		nature: FractionNature.APARTMENT,
 		floor: "2",
 		topology: "T3 DUPLEX",
 		areaRaw: "156.60m²",
@@ -63,7 +63,7 @@ export const apartmentsData: Apartment[] = [
 	},
 	{
 		fraction: "E",
-		nature: FractionNature.TOWNHOUSE,
+		nature: FractionNature.APARTMENT,
 		floor: "2",
 		topology: "T3 DUPLEX",
 		areaRaw: "156.60m²",
@@ -77,7 +77,7 @@ export const apartmentsData: Apartment[] = [
 	},
 	{
 		fraction: "F",
-		nature: FractionNature.TOWNHOUSE,
+		nature: FractionNature.APARTMENT,
 		floor: "2",
 		topology: "T3 DUPLEX",
 		areaRaw: "156.20m²",
@@ -91,7 +91,7 @@ export const apartmentsData: Apartment[] = [
 	},
 	{
 		fraction: "G",
-		nature: FractionNature.TOWNHOUSE,
+		nature: FractionNature.APARTMENT,
 		floor: "2",
 		topology: "T2 DUPLEX",
 		areaRaw: "126.00m²",
@@ -168,7 +168,7 @@ export const apartmentsData: Apartment[] = [
 		areaExterior: "16.00m²",
 		priceSale: "675 000 €",
 		pricePreSale: "607 500 €",
-		areaGarage: "18.80",
+		areaGarage: "18.80m²",
 		areaStorage: "5.00m²",
 		blueprintId: "1fpIKJI_3Xks4WG8QhMwryYI1z8alWMSA",
 		status: FractionStatus.HIDDEN,

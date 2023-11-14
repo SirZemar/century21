@@ -1,6 +1,6 @@
 export enum FractionNature {
-  TOWNHOUSE = "TOWNHOUSE",
-  APARTMENT = "APARTAMENTO",
+	TOWNHOUSE = "TOWNHOUSE",
+	APARTMENT = "APARTMENT",
 }
 
 export enum FractionStatus {

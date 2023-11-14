@@ -75,59 +75,61 @@ const ApartmentsTable: React.FC<Props> = ({ setFormMessage }) => {
           <Table.Body>
             {apartmentsData.map((apartment, i) => {
               return (
-                <Table.Row
-                  key={apartment.fraction}
-                  style={{
-                    backgroundColor:
-                      i % 2
-                        ? "var(--neutralLightest)"
-                        : "var(--secondaryLight)",
-                  }}
-                >
-                  <Table.Cell>{apartment.fraction}</Table.Cell>
-                  <Table.Cell>
-                    {apartment.nature === FractionNature.TOWNHOUSE
-                      ? translate.APARTMENTS.TABLE.FRACTION.NATURE.TOWNHOUSE
-                      : translate.APARTMENTS.TABLE.FRACTION.NATURE.APARTMENT}
-                  </Table.Cell>
-                  <Table.Cell>{apartment.topology}</Table.Cell>
-                  <Table.Cell>{apartment.floor}</Table.Cell>
-                  <Table.Cell>{apartment.areaRaw}</Table.Cell>
-                  <Table.Cell>{apartment.areaExterior}</Table.Cell>
-                  <Table.Cell>{apartment.areaGarage}</Table.Cell>
-                  <Table.Cell>{apartment.areaStorage}</Table.Cell>
-                  <PriceTableCellsBigScreen
-                    status={apartment.status}
-                    priceSale={apartment.priceSale}
-                  />
-                  <Table.Cell
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "5px",
-                    }}
-                  >
-                    <Button
-                      onClick={() =>
-                        handleBlueprintsButtonClick(apartment.blueprintId)
-                      }
-                      className="blueprint-button"
-                    >
-                      {translate.APARTMENTS.TABLE.FRACTION.ACTION.BLUEPRINT}
-                    </Button>
-                    <a style={{ color: "rgba(0,0,0,.6)" }} href="#contact">
-                      <Button
-                        onClick={() =>
-                          handleReservationButtonClick(apartment.fraction)
-                        }
-                        className="blueprint-button"
-                      >
-                        {translate.APARTMENTS.TABLE.FRACTION.ACTION.CONTACT}
-                      </Button>
-                    </a>
-                  </Table.Cell>
-                </Table.Row>
-              );
+								<Table.Row
+									key={apartment.fraction}
+									style={{
+										backgroundColor:
+											i % 2
+												? "var(--neutralLightest)"
+												: "var(--secondaryLight)",
+									}}
+								>
+									<Table.Cell>{apartment.fraction}</Table.Cell>
+									<Table.Cell>
+										{
+											translate.APARTMENTS.TABLE.FRACTION.NATURE[
+												apartment.nature
+											]
+										}
+									</Table.Cell>
+									<Table.Cell>{apartment.topology}</Table.Cell>
+									<Table.Cell>{apartment.floor}</Table.Cell>
+									<Table.Cell>{apartment.areaRaw}</Table.Cell>
+									<Table.Cell>{apartment.areaExterior}</Table.Cell>
+									<Table.Cell>{apartment.areaGarage}</Table.Cell>
+									<Table.Cell>{apartment.areaStorage}</Table.Cell>
+									<PriceTableCellsBigScreen
+										status={apartment.status}
+										priceSale={apartment.priceSale}
+									/>
+									<Table.Cell
+										style={{
+											display: "flex",
+											flexDirection: "column",
+											gap: "5px",
+										}}
+									>
+										<Button
+											onClick={() =>
+												handleBlueprintsButtonClick(apartment.blueprintId)
+											}
+											className='blueprint-button'
+										>
+											{translate.APARTMENTS.TABLE.FRACTION.ACTION.BLUEPRINT}
+										</Button>
+										<a style={{ color: "rgba(0,0,0,.6)" }} href='#contact'>
+											<Button
+												onClick={() =>
+													handleReservationButtonClick(apartment.fraction)
+												}
+												className='blueprint-button'
+											>
+												{translate.APARTMENTS.TABLE.FRACTION.ACTION.CONTACT}
+											</Button>
+										</a>
+									</Table.Cell>
+								</Table.Row>
+							);
             })}
           </Table.Body>
         </Table>
@@ -154,9 +156,9 @@ const ApartmentsTable: React.FC<Props> = ({ setFormMessage }) => {
 										<LabelAndValueSmallScreen
 											label={headerLabels.nature}
 											value={
-												apartment.nature === FractionNature.TOWNHOUSE
-													? translate.APARTMENTS.TABLE.FRACTION.NATURE.TOWNHOUSE
-													: translate.APARTMENTS.TABLE.FRACTION.NATURE.APARTMENT
+												translate.APARTMENTS.TABLE.FRACTION.NATURE[
+													apartment.nature
+												]
 											}
 										/>
 										<LabelAndValueSmallScreen
