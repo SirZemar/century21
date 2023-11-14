@@ -34,7 +34,6 @@ type Props = {
   fractionDefaultMessage: string;
 };
 const ContactForm: React.FC<Props> = ({ fractionDefaultMessage }) => {
-  // const { projectId } = useParams();
   const translate = useTranslate();
 
   const formRef = React.useRef(null);
@@ -50,7 +49,7 @@ const ContactForm: React.FC<Props> = ({ fractionDefaultMessage }) => {
   const [message, setMessage] = useState("");
 
   const handleOnSubmit = (e: FormEvent<HTMLFormElement>) => {
-    if (!email || !name || !message) {
+    if (!email || !name) {
       setFormError(true);
       if (!email) {
         setErrorMessage(translate.CONTACT.FORM.EMAIL.EMPTY);
@@ -63,7 +62,7 @@ const ContactForm: React.FC<Props> = ({ fractionDefaultMessage }) => {
 
     e.preventDefault();
 
-    if (!(emailValid && email && phoneValid && name && message)) {
+    if (!(emailValid && email && phoneValid && name)) {
       e.currentTarget.reset();
       return false;
     }
@@ -71,7 +70,8 @@ const ContactForm: React.FC<Props> = ({ fractionDefaultMessage }) => {
     const payload = {
       email,
       phone,
-      message,
+      message:
+        message === "" ? translate.CONTACT.FORM.MESSAGE.PLACEHOLDER : message,
       name,
     };
     emailjs.send(SERVICE_ID, TEMPLATE_ID, payload, USER_ID).then(
